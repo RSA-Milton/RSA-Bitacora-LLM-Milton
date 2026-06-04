@@ -40,3 +40,25 @@ systemctl restart dnsmasq hostapd
 iptables -A INPUT -p tcp -i eth0 --dport 5000 -j DROP
 ```
 ---
+
+## Sesión de Depuración y Ajustes (Tarde)
+
+**Hitos de la jornada:**
+Se corrigió un fallo crítico que impedía iniciar el servicio `hostapd` debido a que systemd lo tenía marcado como enmascarado (`masked`). Se modificó el script de control `wifiap.sh` para que ejecute `systemctl unmask hostapd` de forma transparente durante el proceso de instalación y activación, logrando levantar exitosamente el AP y obtener asignación IP en `wlan0`.
+
+Adicionalmente, se modificó la configuración maestra para cambiar el SSID del WiFi AP de un formato dinámico (`ACEL-{{ESTACION_ID}}-CONFIG`) a uno fijo (`ACEL-CONFIG`), previniendo desconexiones accidentales del personal técnico de campo si deciden modificar el identificador de la estación desde el panel web de configuración.
+
+**Decisiones y Cambios:**
+- **Resolución de Servicio Enmascarado:** Integración de la llamada a `unmask` en el flujo de inicialización y habilitación del script de control.
+- **SSID Estático:** Eliminación del marcador de estación dinámico en el campo `ssid` del bloque `wifi_ap` en [configuracion_maestra.json](file:///home/rsa/git/montajes/acelerografo-DEV00/configuration/configuracion_maestra.json).
+
+**Scripts/Comandos relevantes:**
+Comandos ejecutados en el equipo remoto para aplicar y validar los cambios:
+```bash
+sudo supervisorctl restart config_server
+sudo wifiap disable
+bash menu.sh  # Opción 3 (Actualizar) para re-hidratar hostapd.conf
+sudo wifiap enable
+sudo wifiap status
+```
+---
