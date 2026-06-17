@@ -30,3 +30,28 @@ cd /home/rsa/git/RSA-Acelerografo/scripts/operation
 /home/rsa/projects/acelerografo/.venv/bin/python3 streaming/test_ring_buffer_store.py
 ```
 ---
+
+# Actividad del 2026-06-17
+
+**Hitos de la jornada:**
+Se implementó y finalizó la Fase 3 del plan de implementación: el daemon procesador de flujo continuo (`stream_processor.py`). Este componente se encarga de leer en tiempo real las tramas de datos del sensor desde un named pipe POSIX (FIFO), procesarlas con el decodificador de la Fase 1 (`frame_decoder.py`) y guardarlas secuencialmente en el almacén rotativo en disco (`RingBufferStore`) desarrollado en la Fase 2.
+
+Durante la integración y validación, se resolvieron dos desafíos técnicos críticos:
+1. **Manejo Seguro de Señales en Entornos Multihilo**: Las llamadas a `signal.signal()` arrojaban un error `ValueError` debido a que CPython restringe el registro de señales únicamente al hilo principal. Esto se solucionó validando que `threading.current_thread() is threading.main_thread()` antes de registrar manejadores de señales, permitiendo una parada limpia del daemon a través de un `threading.Event` en subprocesos.
+2. **Lecturas Bloqueantes en Named Pipe**: Por defecto, abrir el pipe FIFO y llamar a `os.read()` causaba bloqueos indefinidos que impedían que el bucle de ejecución respondiera al flag de parada. Esto se resolvió abriendo el descriptor de archivo con los flags `os.O_RDWR | os.O_NONBLOCK` y controlando la excepción `BlockingIOError` mediante esperas controladas (`time.sleep(0.1)`).
+
+Se diseñó e implementó una suite completa de 18 pruebas unitarias en `test_stream_processor.py`, las cuales simulan fallos en el pipe, datos truncados o corruptos, y detenciones controladas. Todas las pruebas pasaron de forma exitosa (18/18). Además, se generó un archivo de handoff `/home/rsa/git/montajes/acelerografo-DEV00/local-RSA/contexto_ring_buffer_fase_3.md` con especificaciones para continuar con el desarrollo de la Fase 4.
+
+**Decisiones y Cambios:**
+- **Lectura FIFO No Bloqueante (Opción B del diseño):** Uso de `os.O_RDWR | os.O_NONBLOCK` para prevenir bloqueos persistentes en lecturas de named pipes vacíos.
+- **Registro Condicional de Señales:** Restricción de `signal.signal` al hilo principal, usando variables de control internas (`threading.Event`) para la señalización entre hilos.
+- **Validación Estricta de Tramas:** Descarte inmediato de fragmentos corruptos o incompletos para asegurar la calidad de los datos sísmicos indexados en disco.
+
+**Scripts/Comandos relevantes:**
+```bash
+# Ejecutar pruebas unitarias de la Fase 3 (Stream Processor)
+cd /home/rsa/git/montajes/acelerografo-DEV00/scripts/operation
+/home/rsa/projects/acelerografo/.venv/bin/python3 streaming/test_stream_processor.py
+```
+---
+
