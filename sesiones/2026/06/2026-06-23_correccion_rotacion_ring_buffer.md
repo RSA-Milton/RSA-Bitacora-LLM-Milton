@@ -36,10 +36,11 @@ Se corrigieron fallos de aserción en los tests unitarios (`test_naming_archivos
 
 Se procedió al restablecimiento de la producción, eliminando el archivo corrupto gigante y permitiendo que el daemon operara. Tras 20 horas de ejecución continua, se verificó el correcto funcionamiento en producción: la rotación se realiza cada 5 minutos exactos, el cambio de día se procesó exitosamente a medianoche ajustándose a `ring_20260624_000000.bin` y la reanudación del servicio tras un reinicio funcionó de forma correcta (generando un archivo de 1.3 MB en modo append sin truncamientos).
 
-Finalmente, a petición del usuario, se ajustó la cuota máxima del búfer circular a **210 MB** (equivalente a ~24.4 horas de datos continuos) modificando el parámetro `max_size_mb` en la plantilla de configuración del dispositivo para evitar consumos de disco innecesarios.
+Finalmente, al revisar la cuota del búfer, se identificó que el daemon `stream_processor.py` ignoraba el archivo de configuración JSON en producción y corría siempre con el valor por defecto de 500 MB. Se modificó el daemon para que cargue la configuración dinámicamente desde `configuracion_dispositivo.json`. Al desplegar esta corrección y aplicar la nueva cuota de **210 MB** (equivalente a ~24 horas), el daemon detectó el exceso y ejecutó de forma limpia la limpieza FIFO eliminando 6 archivos antiguos (~4.3 MB liberados) en su primer segundo de ejecución.
 
 **Decisiones y Cambios:**
 - **Optimización de Cuota del Búfer Circular:** Reducción de la cuota máxima a `210 MB` en `configuracion_dispositivo.json.template` (aproximadamente 24 horas continuas a la tasa real de 8.6 MB/hora), evitando el sobredimensionamiento original de 500 MB (~2.4 días).
+- **Carga Dinámica de Configuración en stream_processor.py:** Se implementó la lectura automática de `configuracion_dispositivo.json` al arrancar el daemon para alinear sus parámetros operativos de forma directa con la configuración activa del dispositivo.
 - **Pruebas Dinámicas Robustas:** Modificación de aserciones en los tests unitarios para usar `datetime.datetime.utcnow()`, eliminando falsos positivos en entornos donde el desfase de fecha es variable.
 
 **Scripts/Comandos relevantes:**
