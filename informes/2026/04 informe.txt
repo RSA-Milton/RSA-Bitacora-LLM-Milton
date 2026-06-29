@@ -1,0 +1,32 @@
+1. Ensamblado, configuración e instalación de estaciones digitales con 6 componentes para la actualización y ampliación de la red de monitoreo sísmico, integrando arquitecturas IoT para la transmisión distribuida de datos.
+- Estado: No ejecutado en el presente mes.
+- Justificación: Durante el periodo reportado no fue posible iniciar la fase de ensamblaje e instalación debido a la dependencia de adquisición de partes, sin embargo, se realizó revisión preliminar de requerimientos técnicos y compatibilidad de componentes para su futura implementación. 
+- Mes previsto de cumplimiento: Octubre.
+
+2. Implementación de funcionalidades de autodetección de eventos mediante técnicas basadas en machine learning y acceso a datos en tiempo real.
+- Estado: No ejecutado en el presente mes.
+- Justificación: La ejecución de este objeto requiere previamente la actualización y estabilización de funcionalidades base en los acelerógrafos de 3 componentes, con énfasis en compatibilidad con la última versión del sistema operativo desplegado en estaciones remotas, sin embargo, se identificaron requerimientos de compatibilidad de software y dependencias funcionales necesarias para la futura integración de algoritmos de autodetección.
+- Mes previsto de cumplimiento: Julio.
+
+3. Ensamblado, configuración e instalación de acelerógrafos de 3 componentes con integración a la red de digitalizadores de 6 componentes
+- Estado: Ejecutado
+- Actividades realizadas: Se refactorizaron los scripts de aprovisionamiento de las estaciones para utilizar transferencias dinámicas de módulos en lugar de rutas estáticas, habilitando la correcta inicialización de los equipos.
+
+4. Configuración, instalación y mantenimiento de los sistemas desarrollados para el monitoreo automatizado de variables estáticas en las presas propiedad de Elecaustro
+- Estado: Ejecutado
+- Actividades realizadas: Se planificó la migración de la lógica matemática del sensor ultrasónico a la plataforma microcontrolada ESP32-S3 bajo un esquema Edge DSP, permitiendo cálculos de correlación cruzada de alta precisión. Se ejecutó un proceso de prospección geoeléctrica en la infraestructura de la Presa de Labrado.
+
+5. Administración de la red de sensores distribuidos en la presa, garantizando la recolección y transmisión precisa de datos en tiempo real
+- Estado: Ejecutado
+- Actividades realizadas: Se implementó resiliencia de red utilizando algoritmos de retroceso exponencial para gestionar excepciones de conectividad de manera segura, eliminando de esta forma la emisión de falsos estados y registros traslapados originados por conflictos de enrutamiento local. Se configuró un acceso SSH remoto bajo la tecnología Tailscale, sustituyendo alternativas de alto consumo de memoria RAM por una red Peer-to-Peer que prioriza interfaces físicas y opera a través de firewalls restrictivos.
+
+6. Implementación de una solución de gestión y preservación de datos para el manejo del almacenamiento en las estaciones de monitoreo. 
+- Estado: No ejecutado en el presente mes.
+- Justificación: La ejecución de este objeto depende de la consolidación previa de los mecanismos de recolección y transmisión de datos en tiempo real asociados a la red distribuida de sensores, actualmente en proceso de estabilización y optimización. 
+- Mes previsto de cumplimiento: Agosto. 
+
+7. Implementación de un sistema de visualización y monitoreo de métricas operativas basado en protocolos de telemetría ligera. 
+- Estado: No ejecutado en el presente mes.
+- Justificación: La implementación de este objeto requiere previamente la disponibilidad de mecanismos consolidados de almacenamiento y gestión estructurada de datos provenientes de estaciones de monitoreo, actualmente dependientes del cumplimiento del objeto anterior.
+- Mes previsto de cumplimiento: Septiembre. 
+

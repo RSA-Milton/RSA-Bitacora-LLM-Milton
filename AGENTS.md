@@ -31,7 +31,18 @@ Para que el agente tenga acceso:
 
 ---
 
+## ⚙️ Habilidades y Flujos de Trabajo (Skills)
+
+Los skills específicos de este repositorio están en `.agents/skills/`. Se activan con comandos específicos del usuario:
+
+| Skill | Activación | Descripción |
+|-------|-----------|-------------|
+| `generar_informe` | "genera el informe de [mes] de [año]" | Genera el informe mensual consolidando las sesiones y las clasifica en los objetos contractuales |
+
+---
+
 ## 🔗 Repositorios Relacionados
 
 - **Toolkit**: [RSA-Agent-Toolkit](https://github.com/RedSismicaAustro/RSA-Agent-Toolkit) — Skills y reglas del agente.
 - **Metodologías**: [RSA-Metodologias](https://github.com/RedSismicaAustro/RSA-Metodologias) — Índice temático y ADRs.
+

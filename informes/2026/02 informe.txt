@@ -1,0 +1,47 @@
+1. Ensamblado, configuración e instalación de estaciones digitales con 6 componentes para la actualización y ampliación de la red de monitoreo sísmico, integrando arquitecturas IoT para la transmisión distribuida de datos.
+- Estado: Ejecutado
+- Actividades realizadas:
+	- Diseño de arquitectura de adquisición modular: Se estructuró la plataforma integrando conversión analógica de alta resolución (24 bits) y acelerometría digital triaxial para la caracterización integral de eventos sísmicos de diversas amplitudes.
+	- Definición de procesamiento jerárquico: Se estableció un esquema distribuido donde un microcontrolador administra la adquisición determinista y sincronización temporal, delegando las tareas de almacenamiento y comunicaciones a la unidad de procesamiento principal.
+	- Segmentación de la estructura de alimentación: Se implementó la separación de dominios energéticos analógicos y digitales desde el bus principal para mitigar el ruido electromagnético y preservar la integridad de las señales sísmicas.
+	- Desarrollo de interfaces de protección de hardware: Se incorporaron sistemas de filtrado de interferencias electromagnéticas (EMI) y protección contra descargas electrostáticas (ESD) en las entradas físicas de los sensores externos.
+	- Integración de telemetría y variables auxiliares: Se configuró el hardware secundario para la supervisión continua del estado energético y la captura automatizada de parámetros ambientales (temperatura, humedad y presión).
+
+2. Implementación de funcionalidades de autodetección de eventos mediante técnicas basadas en machine learning y acceso a datos en tiempo real.
+- Estado: Ejecutado
+- Actividades realizadas:
+	- Estrategia de integración ML: Se estructuró el flujo de preprocesamiento y compatibilidad de datos para la implementación del modelo de autodetección sísmica GPD.
+	- Gestión de dependencias: Se creó y configuró un entorno virtual aislado de Python con soporte para librerías de inferencia (tflite-runtime), protegiendo la integridad del sistema operativo.
+
+3. Ensamblado, configuración e instalación de acelerógrafos de 3 componentes con integración a la red de digitalizadores de 6 componentes. 
+- Estado: Ejecutado
+- Actividades realizadas:
+	- Actualización de comunicaciones MQTT: Se refactorizó el cliente de transmisión hacia una arquitectura de coordinador reactivo con tópicos jerárquicos.
+	- Mantenimiento correctivo: Se corrigieron fallos de ejecución en producción y se ajustaron tiempos de espera de red para robustecer el envío de respaldos.
+	- Monitoreo de telemetría: Se modificaron los cálculos de recolección de métricas internas para reportar los niveles porcentuales de uso real del hardware de la estación.
+
+4. Configuración, instalación y mantenimiento de los sistemas desarrollados para el monitoreo automatizado de variables estáticas en la presas propiedad de Elecaustro.  
+- Estado: No ejecutado en el presente mes.
+- Justificación: 
+- Mes previsto de cumplimiento: 
+
+5. Administración de la red de sensores distribuidos en la presa, garantizando la recolección y transmisión precisa de datos en tiempo real. 
+- Estado: Ejecutado
+- Actividades realizadas:
+	- Optimización de infraestructura base: Se unificaron los contenedores de monitoreo en un solo stack de Docker con configuración de persistencia y protección de credenciales.
+	- Despliegue de Dashboards: Se reestructuraron los paneles de visualización bajo un modelo de Hub General y Detalles por estación, aprovisionados automáticamente.
+	- Eficiencia en recolección de datos: Se habilitó el mapeo avanzado de tópicos MQTT en el servicio de ingesta para agilizar el procesamiento de las señales provenientes de las estaciones.
+
+6. Implementación de una solución de gestión y preservación de datos para el manejo del almacenamiento en las estaciones de monitoreo. 
+- Estado: No ejecutado en el presente mes.
+- Justificación: 
+- Mes previsto de cumplimiento: 
+
+7. Implementación de un sistema de visualización y monitoreo de métricas operativas basado en protocolos de telemetría ligera.
+- Estado: No ejecutado en el presente mes.
+- Justificación: 
+- Mes previsto de cumplimiento: 
+
+
+
+

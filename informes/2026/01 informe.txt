@@ -1,0 +1,37 @@
+1. Ensamblado, configuración e instalación de estaciones digitales con 6 componentes para la actualización y ampliación de la red de monitoreo sísmico, integrando arquitecturas IoT para la transmisión distribuida de datos. 
+- Estado: Ejecutado
+- Actividades realizadas:
+	- Refactorización del módulo de conversión miniSEED: Se implementó un modo de procesamiento masivo por directorio con manejo robusto de errores y modularización de funciones críticas para mejorar la reutilización del código.
+	- Sistema híbrido de extracción de timestamps: Se desarrolló un método configurable que combina la fecha del nombre de archivo con la hora de las tramas binarias, incluyendo validación cruzada de metadatos y corrección de errores críticos de estabilidad.
+	- Librería de logging estructurado: Se creó structured_logger.py con soporte para rotación automática y tags identificadores, integrando llamadas de logging en el módulo de conversión con reportes de calidad de datos
+
+2. Implementación de funcionalidades de autodetección de eventos mediante técnicas basadas en machine learning y acceso a datos en tiempo real.
+- Estado: No ejecutado en el presente mes.
+- Justificación: 
+- Mes previsto de cumplimiento: 
+
+3. Ensamblado, configuración e instalación de acelerógrafos de 3 componentes con integración a la red de digitalizadores de 6 componentes.
+- Estado: No ejecutado en el presente mes.
+- Justificación: 
+- Mes previsto de cumplimiento: 
+
+4. Configuración, instalación y mantenimiento de los sistemas desarrollados para el monitoreo automatizado de variables estáticas en la presas propiedad de Elecaustro.  
+- Estado: Ejecutado
+- Actividades realizadas: El día 29 de enero de 2026 se realizaron tareas de prospección geoeléctrica en la Presa de Labrado
+
+5. Administración de la red de sensores distribuidos en la presa, garantizando la recolección y transmisión precisa de datos en tiempo real.  
+- Estado: Ejecutado
+- Actividades realizadas:
+	- Optimización del sistema de ejecución continua: Se refactorizó registrocontinuo.sh implementando verificación de procesos activos, ejecución secuencial bloqueante y mejora del comando de terminación para eliminar procesos residuales.
+	- Optimización del gestor de archivos: Se integró el sistema de logging estructurado en gestor_archivos_acq.py, reduciendo el tamaño de logs mediante consolidación de mensajes redundantes y tags específicos para operaciones de sincronización.
+
+6. Implementación de una solución de gestión y preservación de datos para el manejo del almacenamiento en las estaciones de monitoreo. 
+- Estado: Ejecutado
+- Actividades realizadas:
+	- Autenticación remota en Google Drive: Se implementó soporte para noauth_local_webserver permitiendo autenticación manual por código en sesiones SSH, con robustecimiento del filtrado de argumentos en subir_archivo.py.
+	- Seguridad de credenciales y despliegue: Se actualizó gitignore para proteger archivos de credenciales y se sincronizó la librería structured_logger.py en todos los nodos mediante deploy.sh, garantizando estandarización del sistema de logs.
+
+7. Implementación de un sistema de visualización y monitoreo de métricas operativas basado en protocolos de telemetría ligera.
+- Estado: No ejecutado en el presente mes.
+- Justificación: 
+- Mes previsto de cumplimiento:

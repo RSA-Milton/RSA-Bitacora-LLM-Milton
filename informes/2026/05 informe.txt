@@ -1,0 +1,30 @@
+1. Ensamblado, configuración e instalación de estaciones digitales con 6 componentes para la actualización y ampliación de la red de monitoreo sísmico, integrando arquitecturas IoT para la transmisión distribuida de datos.
+- Estado: No ejecutado en el presente mes.
+- Justificación: Durante el periodo reportado no fue posible iniciar la fase de ensamblaje e instalación debido a la dependencia de adquisición de partes, sin embargo, se realizó una revisión preliminar de requerimientos técnicos y compatibilidad de componentes para su futura implementación.
+- Mes previsto de cumplimiento: Octubre.
+
+2. Implementación de funcionalidades de autodetección de eventos mediante técnicas basadas en machine learning y acceso a datos en tiempo real.
+- Estado: Ejecutado
+- Actividades realizadas: Se implementó la funcionalidad para extraer segmentos sísmicos específicos y cargarlos en la nube de forma asíncrona mediante comandos remotos, aislando su ejecución a través de subprocesos para prevenir colisiones de dependencias en el sistema operativo base. Se configuró el soporte para comandos globales de transmisión simultánea, optimizando la coordinación y el ancho de banda en la red como paso previo necesario para la integración de los algoritmos de autodetección. Complementariamente, se habilitó un entorno funcional de desarrollo aislado en estaciones de trabajo corporativas sujetas a políticas de grupo restrictivas, asegurando la correcta ejecución local de los scripts de procesamiento.
+
+3. Ensamblado, configuración e instalación de acelerógrafos de 3 componentes con integración a la red de digitalizadores de 6 componentes.
+- Estado: Ejecutado
+- Actividades realizadas: Se realizó el ensamblaje de componentes electrónicos y la configuración de red de un acelerógrafo destinado a la localidad de Tenguel. Posteriormente, se efectuó la comprobación remota de su funcionamiento mediante la revisión de datos de telemetría y tareas de administración a través de protocolo SSH.
+
+4. Configuración, instalación y mantenimiento de los sistemas desarrollados para el monitoreo automatizado de variables estáticas en las presas propiedad de Elecaustro.
+- Estado: Ejecutado
+- Actividades realizadas: Se ejecutó un proceso de prospección geoeléctrica en la infraestructura perteneciente a la Presa de Labrado como parte de las tareas de mantenimiento de la red.
+
+5. Administración de la red de sensores distribuidos en la presa, garantizando la recolección y transmisión precisa de datos en tiempo real.
+- Estado: No ejecutado en el presente mes.
+- Justificación: Durante el mes reportado, los trabajos de administración en la red de sensores distribuidos se vieron limitados por la falta de disponibilidad de los componentes y partes técnicas pendientes de adquisición. Debido a esta restricción material, no fue posible realizar las intervenciones físicas planificadas en la infraestructura, por lo que se priorizaron las tareas de análisis, recepción y estructuración de datos de la red de coordinómetros de la presa de Chanlud, planificando trabajar en la transmisión automática de estos datos durante el mes de junio.
+- Mes previsto de cumplimiento: Junio
+
+6. Implementación de una solución de gestión y preservación de datos para el manejo del almacenamiento en las estaciones de monitoreo.
+- Estado: No ejecutado en el presente mes.
+- Justificación: La ejecución de este objeto depende de la consolidación previa de los mecanismos de recolección y transmisión de datos en tiempo real asociados a la red distribuida de sensores, los cuales se encuentran actualmente en proceso de estabilización y optimización.
+- Mes previsto de cumplimiento: Agosto.
+
+7. Implementación de un sistema de visualización y monitoreo de métricas operativas basado en protocolos de telemetría ligera.
+- Estado: Ejecutado
+- Actividades realizadas: Se creó y estabilizó la consola web de control operativo, reestructurando el despliegue en contenedores para solucionar bloqueos de permisos, asegurar la gestión encriptada de credenciales y optimizar el diseño visual de la interfaz de captura temporal y bitácoras. Se corrigió una falla de duplicidad en los gráficos históricos al omitir la propagación de identificadores volátiles en el agente de recolección, unificando los flujos de métricas de salud del sistema. Finalmente, se desarrolló y aplicó una configuración no invasiva para ejecutar un quiosco de visualización continua sobre un servidor local de procesamiento sísmico, resolviendo problemas de autenticación sin comprometer la estabilidad del entorno gráfico crítico.
