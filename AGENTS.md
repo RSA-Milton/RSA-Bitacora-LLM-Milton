@@ -45,4 +45,5 @@ Los skills específicos de este repositorio están en `.agents/skills/`. Se acti
 
 - **Toolkit**: [RSA-Agent-Toolkit](https://github.com/RedSismicaAustro/RSA-Agent-Toolkit) — Skills y reglas del agente.
 - **Metodologías**: [RSA-Metodologias](https://github.com/RedSismicaAustro/RSA-Metodologias) — Índice temático y ADRs.
+- **Toolkit PPP**: [RSA-PPP-Toolkit](https://github.com/Red-Sismica-del-Austro/RSA-PPP-Toolkit) — Gobernanza de prácticas preprofesionales.
 
