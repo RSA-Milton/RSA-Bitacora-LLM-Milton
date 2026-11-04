@@ -37,7 +37,8 @@ Los skills específicos de este repositorio están en `.agents/skills/`. Se acti
 
 | Skill | Activación | Descripción |
 |-------|-----------|-------------|
-| `generar_informe` | "genera el informe de [mes] de [año]" | Genera el informe mensual consolidando las sesiones y las clasifica en los objetos contractuales |
+| `generar_informe` | "genera el informe de [mes] de [año]" | Genera el informe mensual en texto plano consolidando las sesiones en los objetos contractuales (FOR-10) |
+| `generar_anexos_informe` | "genera los anexos de [mes] de [año]" o "compila las evidencias de [mes]" | Genera los anexos técnicos independientes en HTML (versionado en Git) y PDF en Google Drive por cada objeto ejecutado |
 
 ---
 

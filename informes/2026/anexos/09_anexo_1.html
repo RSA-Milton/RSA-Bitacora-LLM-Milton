@@ -1,0 +1,412 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm 12mm 12mm;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 8.2pt;
+    line-height: 1.32;
+    color: #1a202c;
+    margin: 0;
+    padding: 0;
+  }
+  .header-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 6px;
+    border-bottom: 2px solid #0f2b48;
+    padding-bottom: 4px;
+  }
+  .header-table td { vertical-align: middle; padding: 2px 4px; }
+  .inst-title {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #0f2b48;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .inst-sub {
+    font-size: 8pt;
+    font-weight: 600;
+    color: #2b6cb0;
+  }
+  .badge-anexo {
+    background: #0f2b48;
+    color: #ffffff;
+    font-size: 8.5pt;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 3px;
+    text-align: center;
+    display: inline-block;
+  }
+  .meta-box {
+    width: 100%;
+    border: 1px solid #cbd5e0;
+    background: #f7fafc;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-bottom: 8px;
+    font-size: 7.8pt;
+  }
+  .meta-grid {
+    display: table;
+    width: 100%;
+  }
+  .meta-row {
+    display: table-row;
+  }
+  .meta-cell {
+    display: table-cell;
+    padding: 1.5px 6px;
+  }
+  .meta-label { font-weight: 700; color: #2d3748; }
+  
+  h2.sec-title {
+    background: #0f2b48;
+    color: #ffffff;
+    font-size: 8.6pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3px 6px;
+    margin: 6px 0 4px 0;
+    border-radius: 2px;
+    letter-spacing: 0.2px;
+  }
+  h3.sub-title {
+    font-size: 8.2pt;
+    font-weight: 700;
+    color: #1a365d;
+    border-bottom: 1.5px solid #2b6cb0;
+    padding-bottom: 1px;
+    margin: 5px 0 3px 0;
+  }
+  p { margin: 0 0 4px 0; text-align: justify; }
+  
+  table.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7.6pt;
+    margin: 4px 0 6px 0;
+  }
+  table.data-table th {
+    background: #1a365d;
+    color: #ffffff;
+    padding: 3px 5px;
+    font-weight: 600;
+    border: 1px solid #2a4365;
+    text-align: left;
+  }
+  table.data-table td {
+    border: 1px solid #cbd5e0;
+    padding: 2.5px 5px;
+  }
+  table.data-table tr:nth-child(even) { background: #f8fafc; }
+  
+  .callout {
+    background: #ebf8ff;
+    border-left: 3px solid #3182ce;
+    padding: 4px 7px;
+    margin: 4px 0;
+    font-size: 7.7pt;
+    border-radius: 0 3px 3px 0;
+  }
+  .callout-alert {
+    background: #fff5f5;
+    border-left: 3px solid #e53e3e;
+    padding: 4px 7px;
+    margin: 4px 0;
+    font-size: 7.7pt;
+    border-radius: 0 3px 3px 0;
+  }
+  .code-block {
+    background: #2d3748;
+    color: #edf2f7;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 7.2pt;
+    padding: 4px 6px;
+    border-radius: 3px;
+    margin: 3px 0;
+    line-height: 1.25;
+  }
+  .page-break {
+    page-break-before: always;
+  }
+  .footer-sign {
+    margin-top: 10px;
+    border-top: 1px solid #a0aec0;
+    padding-top: 6px;
+  }
+  .sign-box {
+    width: 220px;
+    text-align: center;
+    border-top: 1px solid #2d3748;
+    margin: 18px auto 4px auto;
+    padding-top: 2px;
+    font-size: 7.8pt;
+  }
+  ul { margin: 2px 0 4px 14px; padding: 0; }
+  li { margin-bottom: 2px; }
+  .page-num {
+    text-align: right;
+    font-size: 7.2pt;
+    color: #718096;
+    margin-top: 2px;
+  }
+</style>
+</head>
+<body>
+
+<!-- PÁGINA 1 -->
+<table class="header-table">
+  <tr>
+    <td style="width: 75%;">
+      <div class="inst-title">Universidad de Cuenca</div>
+      <div class="inst-sub">Departamento de Ingeniería Civil | Red Sísmica del Austro (RSA)</div>
+    </td>
+    <td style="width: 25%; text-align: right;">
+      <div class="badge-anexo">ANEXO TÉCNICO 1</div>
+      <div style="font-size: 7pt; color: #4a5568; margin-top: 2px;">Expediente FOR-10</div>
+    </td>
+  </tr>
+</table>
+
+<div class="meta-box">
+  <div class="meta-grid">
+    <div class="meta-row">
+      <div class="meta-cell"><span class="meta-label">Profesional:</span> Ing. Milton Rodrigo Muñoz Calle</div>
+      <div class="meta-cell"><span class="meta-label">Contrato:</span> CO-01056-2026</div>
+      <div class="meta-cell"><span class="meta-label">Periodo:</span> 01/09/2026 – 30/09/2026</div>
+    </div>
+    <div class="meta-row">
+      <div class="meta-cell"><span class="meta-label">Objeto Contractual:</span> Objeto 3 (Acelerógrafos de 3 componentes)</div>
+      <div class="meta-cell"><span class="meta-label">Entregable:</span> Resiliencia en Adquisición, Release v4.5.2 y Red SHM</div>
+      <div class="meta-cell"><span class="meta-label">Código:</span> RSA-EVI-2026-09-ANX01</div>
+    </div>
+  </div>
+</div>
+
+<h2 class="sec-title">1. Objeto Contractual y Alcance Técnico Pericial</h2>
+<p>
+El presente anexo técnico certifica pericialmente las labores de reingeniería, blindaje de resiliencia, control de versiones y despliegue operativo ejecutadas durante septiembre de 2026 sobre la flota de acelerógrafos digitales triaxiales de la Red Sísmica del Austro (RSA), en estricta correspondencia con el <strong>Objeto Contractual 3</strong>: <em>"Ensamblado, configuración e instalación de acelerógrafos de 3 componentes con integración a la red de digitalizadores de 6 componentes"</em>. El alcance abarca la mitigación estructural de paradas en cascada en adquisición (ADR-018), sincronización dinámica NTP previa al arranque, promoción y despliegue formal del release <strong>v4.5.2</strong> en estaciones de campo (<code>CHA01</code>, <code>CHA02</code>), gestión forense del incidente de livelock de memoria en red corporativa y la reestructuración de la Red Acelerográfica de Salud Estructural (SHM V1.4).
+</p>
+
+<h2 class="sec-title">2. Arquitectura de Resiliencia en Cuatro Capas Post-Incidente CHA01 (ADR-018)</h2>
+<p>
+El diagnóstico pericial realizado el 2026-09-01 tras la parada de la estación <code>CHA1</code> (configurada como <code>CHA01</code>) demostró que el servicio de transmisión operaba correctamente, pero el demonio base de adquisición en C (<code>registro_continuo_4.5.0.c</code>) se detuvo tras un reinicio del sistema el 27 de agosto. Esta detención destruyó el named pipe <code>/tmp/my_pipe</code>, provocando un fallo en cascada: excepciones <code>PermissionError</code> y <code>FileNotFoundError</code> en <code>stream_processor.py</code>, ausencia de memoria compartida <code>/dev/shm/rsa_current_frame</code>, congelamiento del Ring Buffer, reinicios cíclicos del worker de inferencia GPD y fallos en las extracciones de eventos sísmicos vía MQTT.
+</p>
+<p>
+Para erradicar definitivamente esta vulnerabilidad sistémica, se implementó el <strong>Plan de Resiliencia en Cuatro Capas</strong> formalizado mediante el <strong>ADR-018</strong>:
+</p>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th style="width: 14%;">Capa</th>
+      <th style="width: 28%;">Componente Afectado</th>
+      <th style="width: 33%;">Mecanismo de Blindaje Implementado</th>
+      <th style="width: 25%;">Validación Empírica</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Capa 1: Hardware & Systemd</strong></td>
+      <td><code>rsa-acelerografo.service</code><br>dsPIC33EP256MC202</td>
+      <td>Reinicio automático (<code>Restart=always</code>, <code>RestartSec=5s</code>). Directiva <code>ExecStartPre</code> con reseteo físico por hardware del dsPIC33 vía pin MCLR (<code>reset_master</code>) y purga de FIFO residual.</td>
+      <td>Recuperación automática comprobada en 5 s tras <code>kill -9</code> forzado.</td>
+    </tr>
+    <tr>
+      <td><strong>Capa 2: Named Pipe</strong></td>
+      <td><code>/tmp/my_pipe</code><br>(FIFO IPC en C)</td>
+      <td>Fijación estricta de máscara de permisos <code>0666</code> (<code>mkfifo</code> con <code>chmod 0666</code>) garantizando interoperabilidad entre procesos root y usuario <code>rsa</code>.</td>
+      <td>Eliminación total de excepciones <code>PermissionError: [Errno 13]</code>.</td>
+    </tr>
+    <tr>
+      <td><strong>Capa 3: Streaming Edge</strong></td>
+      <td><code>stream_processor.py</code><br>(Daemon Supervisor)</td>
+      <td>Implementación de <code>_abrir_pipe_con_retry()</code> con algoritmo de retroceso exponencial (0.5 s a 8.0 s, timeout 120 s) tolerando arranques asíncronos sin crashear.</td>
+      <td>20/20 tests unitarios aprobados en <code>test_stream_processor.py</code>.</td>
+    </tr>
+    <tr>
+      <td><strong>Capa 4: Auditoría MQTT</strong></td>
+      <td><code>acquisition_watchdog.py</code><br><code>mqtt_coordinator.py</code></td>
+      <td>Módulo auditor en segundo plano que evalúa cada 60 s la frescura del Ring Buffer y emite telemetría estructurada al tópico <code>status/acquisition</code>.</td>
+      <td>Latencia de trama reportada en tiempo real: <code>age_seconds = 1.6s</code> (Nominal).</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <strong>Garantía Pericial de Recuperación Autónoma:</strong> La combinación de <code>ExecStartPre=reset_master</code> y auto-reinicio en systemd asegura que ante cualquier congelamiento del bus SPI o traba en los buffers del microcontrolador esclavo, el sistema operativo fuerza un pulso físico en el pin MCLR de 20 ms, inicializando el hardware desde cero antes de reabrir el canal FIFO.
+</div>
+
+<div class="page-num">Página 1 de 3 — Anexo 1 | CO-01056-2026</div>
+
+<!-- PÁGINA 2 -->
+<div class="page-break"></div>
+
+<table class="header-table">
+  <tr>
+    <td style="width: 75%;">
+      <div class="inst-title">Universidad de Cuenca</div>
+      <div class="inst-sub">Departamento de Ingeniería Civil | Red Sísmica del Austro (RSA)</div>
+    </td>
+    <td style="width: 25%; text-align: right;">
+      <div class="badge-anexo">ANEXO TÉCNICO 1</div>
+      <div style="font-size: 7pt; color: #4a5568; margin-top: 2px;">Expediente FOR-10</div>
+    </td>
+  </tr>
+</table>
+
+<h2 class="sec-title">3. Sincronización Temporal Dinámica Pre-Arranque (wait_for_ntp.sh)</h2>
+<p>
+Tras reinicios en caliente (<code>sudo reboot</code>), se identificó que <code>registro_continuo</code> arrancaba en apenas 1-2 segundos tras el boot, antes de que el demonio <code>ntpd</code> completara la sincronización de reloj con los servidores de estrato 1. Esto provocaba advertencias operativas (<code>WARNING - Sincronizacion NTP: No</code>), generando el riesgo crítico de desfasajes temporales en las cabeceras de los archivos crudos <code>.dat</code> y en el Ring Buffer.
+</p>
+<p>
+Se desarrolló el script helper <code>/usr/local/bin/wait_for_ntp</code> acoplado a la directiva <code>ExecStartPre</code> de systemd, implementando una espera activa dinámica mediante <code>ntpstat</code> (con fallbacks a <code>timedatectl</code> y <code>chronyc</code>) y un timeout de seguridad no bloqueante de 120 segundos para operación autónoma offline.
+</p>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Métrica Evaluada</th>
+      <th>Esquema Anterior (Cron Estático)</th>
+      <th>Nuevo Esquema Dinámico (wait_for_ntp)</th>
+      <th>Impacto Técnico Operativo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Tiempo de retención tras arranque</strong></td>
+      <td>180 segundos fijos e incondicionales</td>
+      <td>93 segundos (adaptativo según red)</td>
+      <td><strong>Reducción de 87 s (48.3% más rápido)</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Tiempo total de arranque en frío</strong></td>
+      <td>193 segundos promedio</td>
+      <td>108 segundos promedio</td>
+      <td><strong>Optimización global del 44% en disponibilidad</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Estado del reloj al primer frame</strong></td>
+      <td>Incierto / Frecuentes saltos temporales</td>
+      <td>Certificado: <code>INFO - Sincronizacion NTP: Si</code></td>
+      <td>Cero desfasajes en sismogramas y metadatos MiniSEED</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="sec-title">4. Gobernanza de Despliegue, Release v4.5.2 y Validación en Campo</h2>
+<p>
+Para proteger la vida útil de las memorias flash MicroSD en las estaciones remotas y profesionalizar el ciclo de release bajo estándares de ingeniería de software, se establecieron tres hitos verificables:
+</p>
+<ul>
+  <li><strong>Aislamiento de la Rama de Producción:</strong> Se purgó de la rama <code>main</code> el directorio <code>docs/</code> y las directivas internas del agente (<code>AGENTS.md</code>), manteniéndolos íntegramente en la rama <code>develop</code>. La sincronización hacia producción se formalizó mediante checkout selectivo (<code>git checkout develop -- scripts/ models/ configuration/ main-libraries/</code>).</li>
+  <li><strong>Release SemVer v4.5.2 y Despliegue en Campo:</strong> Se generó el tag Git inmutable <code>v4.5.2</code> incorporando las mejoras de resiliencia MQTT (ADR-023) y se ejecutó el despliegue escalonado en las estaciones de campo <code>CHA01</code> y <code>CHA02</code>. En <code>CHA01</code> se saneó la propiedad de los archivos de registro (<code>chown -R rsa:rsa log-files/</code>), erradicando excepciones <code>PermissionError</code> en <code>gestor_archivos_acq.py</code>. En <code>CHA02</code> se auditó la integridad física triaxial, detectando una desviación estática en el eje X ($a_x \approx 0.64\text{ g}$) con ejes Y y Z nominales, catalogada para nivelación física en próxima visita.</li>
+  <li><strong>Blindaje Incondicional en <code>update.sh</code> y Skill <code>despliegue_release</code>:</strong> Se integró en <code>update.sh</code> una rutina obligatoria que detecta el usuario operativo (<code>$SUDO_USER</code>) y normaliza permisos con <code>chmod -R u+rwX,g+rwX</code>. Asimismo, se creó la skill interactiva <code>despliegue_release.md</code> en el repositorio institucional <code>RSA-Agent-Toolkit</code> para asistir despliegues seguros sin violar la restricción SSHFS.</li>
+</ul>
+
+<div class="code-block">
+# Evidencia de Despliegue v4.5.2 en Estación Piloto CHA01
+$ systemctl status rsa-acelerografo.service
+● rsa-acelerografo.service - Adquisicion Continua Acelerografo RSA (dsPIC33)
+   Loaded: loaded (/etc/systemd/system/rsa-acelerografo.service; enabled; vendor preset: enabled)
+   Active: active (running) since Wed 2026-09-23 16:45:12 UTC; 7 days ago
+  Process: 1104 ExecStartPre=/usr/local/bin/wait_for_ntp 120 (code=exited, status=0/SUCCESS)
+ Main PID: 1128 (registro_contin)
+    Tasks: 2 (limit: 2058) | Memory: 3.4M | CPU: 1.8%
+   CGroup: /system.slice/rsa-acelerografo.service
+           └─1128 /home/rsa/projects/acelerografo/scripts/acelerografo/registro_continuo_4.5.0
+</div>
+
+<div class="page-num">Página 2 de 3 — Anexo 1 | CO-01056-2026</div>
+
+<!-- PÁGINA 3 -->
+<div class="page-break"></div>
+
+<table class="header-table">
+  <tr>
+    <td style="width: 75%;">
+      <div class="inst-title">Universidad de Cuenca</div>
+      <div class="inst-sub">Departamento de Ingeniería Civil | Red Sísmica del Austro (RSA)</div>
+    </td>
+    <td style="width: 25%; text-align: right;">
+      <div class="badge-anexo">ANEXO TÉCNICO 1</div>
+      <div style="font-size: 7pt; color: #4a5568; margin-top: 2px;">Expediente FOR-10</div>
+    </td>
+  </tr>
+</table>
+
+<h2 class="sec-title">5. Diagnóstico Forense y Mitigación de Contingencia en CHA02 (DNS Corporativo y Livelock)</h2>
+<p>
+Entre el 23 y el 30 de septiembre se atendió una degradación crítica en la estación <code>CHA02</code>. La investigación pericial reveló una cadena de fallos encadenados:
+</p>
+<table class="data-table">
+  <thead>
+    <tr>
+      <th style="width: 20%;">Fase del Incidente</th>
+      <th style="width: 45%;">Comportamiento Técnico Observado</th>
+      <th style="width: 35%;">Impacto y Acción Ejecutada</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. Fallo Selectivo DNS</strong></td>
+      <td>El servidor DNS corporativo (<code>192.170.100.250</code>) resolvía <code>github.com</code> y <code>pool.ntp.org</code>, pero denegaba <code>googleapis.com</code> (<code>Temporary failure in name resolution</code>).</td>
+      <td>Interrupción de subidas a Google Drive. Retención segura en disco local (14 GB disponibles / 4 meses de autonomía).</td>
+    </tr>
+    <tr>
+      <td><strong>2. Livelock por Memoria</strong></td>
+      <td>Se acumularon <strong>761 archivos MiniSEED (~2.6 GB)</strong>. El cron horario ejecutó instancias concurrentes de <code>gestor_archivos_acq.py</code> sin exclusión mutua, saturando la RAM al <strong>98.5%</strong> con <em>swap thrashing</em> masivo.</td>
+      <td>Asfixia de ancho de banda (bufferbloat) y bloqueo de conexiones SSH entrantes por timeout en puerto 22.</td>
+    </tr>
+    <tr>
+      <td><strong>3. Mitigación en Nube</strong></td>
+      <td>Se envió la carpeta de Drive de CHA02 a la papelera desde el navegador. La API respondió con error <code>404 Not Found</code> en &lt;100 ms sin transferir bytes masivos.</td>
+      <td>Cese instantáneo de la asfixia de red; reapertura de sockets TCP 22 y 5000 verificados desde concentrador.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="callout">
+  <strong>Medidas de Blindaje Estructural Diseñadas:</strong> Se formalizó el diseño de tres mecanismos en <code>gestor_archivos_acq.py</code>: (a) Exclusión mutua atómica basada en archivo de bloqueo (<code>fcntl.flock</code>), (b) Límite de procesamiento por lotes (<em>batch limit</em> de 15 archivos/ciclo), y (c) Manejador de reinicio de emergencia vía MQTT (<code>cmd/reboot_system</code>).
+</div>
+
+<h2 class="sec-title">6. Red Acelerográfica de Salud Estructural (SHM V1.4 - Planificación 3)</h2>
+<p>
+Se ejecutó la auditoría y reestructuración técnica del proyecto de <strong>Red de Monitorización de Salud Estructural (SHM - Acelerógrafo V1.4)</strong>, delimitando un plan de trabajo de <strong>144 horas de dedicación en 7 fases cuantificables</strong> (<code>Planificacion 3.md</code>) para garantizar la autonomía y sincronización de los nodos sensores:
+</p>
+<ul>
+  <li><strong>Topología e Infraestructura Validada:</strong> Comunicación en cascada (Daisy Chain) bajo bus RS485 a 2 Mbps y sincronización física por pulsos diferenciales entre Concentrador y Nodos Sensores dsPIC33EP256MC202, con retardos validados de 1.2 µs (Concentrador-Nodo) y 14.0 ns (entre Nodos A y B).</li>
+  <li><strong>Subsanación de Hardware en Nodos:</strong> Diagnóstico del fallo de inicialización en microSD por ausencia de pin físico de <em>card-detect</em>. Se programó el reemplazo y soldadura de zócalos con contacto mecánico en ambos nodos sensores.</li>
+  <li><strong>Arquitectura de Doble Búfer (Ping-Pong) en RAM:</strong> Implementación de dos buffers de 512 bytes en memoria RAM del dsPIC33 para desacoplar la interrupción de captura de sincronismo (INT1) de la latencia de escritura en sectores físicos flash de la tarjeta microSD, impidiendo pérdidas de tramas.</li>
+  <li><strong>Integración de Acelerómetro ADXL355 y Validación:</strong> Acoplamiento del sensor triaxial ADXL355 por SPI, complementado con el desarrollo de software en Python para volcado y graficación temporal en ensayos experimentales de co-localización (<em>shake/tap test</em> con pulsos mecánicos cada 5 s).</li>
+</ul>
+
+<div class="footer-sign">
+  <table style="width: 100%; border-collapse: collapse;">
+    <tr>
+      <td style="width: 65%; font-size: 7.5pt; vertical-align: bottom;">
+        <strong>Certificación Técnica:</strong> Se certifica la veracidad de los hitos técnicos, registros de despliegue y resultados cuantitativos presentados en este anexo para fines de auditoría y liquidación contractual.
+      </td>
+      <td style="width: 35%; text-align: center;">
+        <div class="sign-box">
+          <strong>Ing. Milton Rodrigo Muñoz Calle</strong><br>
+          Especialista Técnico RSA — Contrato CO-01056-2026<br>
+          Departamento de Ingeniería Civil | U. de Cuenca
+        </div>
+      </td>
+    </tr>
+  </table>
+  <div class="page-num">Página 3 de 3 — Anexo 1 | CO-01056-2026</div>
+</div>
+
+</body>
+</html>

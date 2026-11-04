@@ -1,0 +1,411 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm 12mm 12mm;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 8.2pt;
+    line-height: 1.32;
+    color: #1a202c;
+    margin: 0;
+    padding: 0;
+  }
+  .header-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 6px;
+    border-bottom: 2px solid #0f2b48;
+    padding-bottom: 4px;
+  }
+  .header-table td { vertical-align: middle; padding: 2px 4px; }
+  .inst-title {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #0f2b48;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .inst-sub {
+    font-size: 8pt;
+    font-weight: 600;
+    color: #2b6cb0;
+  }
+  .badge-anexo {
+    background: #0f2b48;
+    color: #ffffff;
+    font-size: 8.5pt;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 3px;
+    text-align: center;
+    display: inline-block;
+  }
+  .meta-box {
+    width: 100%;
+    border: 1px solid #cbd5e0;
+    background: #f7fafc;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-bottom: 8px;
+    font-size: 7.8pt;
+  }
+  .meta-grid { display: table; width: 100%; }
+  .meta-row { display: table-row; }
+  .meta-cell { display: table-cell; padding: 1.5px 6px; }
+  .meta-label { font-weight: 700; color: #2d3748; }
+  
+  h2.sec-title {
+    background: #0f2b48;
+    color: #ffffff;
+    font-size: 8.6pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3px 6px;
+    margin: 6px 0 4px 0;
+    border-radius: 2px;
+    letter-spacing: 0.2px;
+  }
+  h3.sub-title {
+    font-size: 8.2pt;
+    font-weight: 700;
+    color: #1a365d;
+    border-bottom: 1.5px solid #2b6cb0;
+    padding-bottom: 1px;
+    margin: 5px 0 3px 0;
+  }
+  p { margin: 0 0 4px 0; text-align: justify; }
+  
+  table.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7.6pt;
+    margin: 4px 0 6px 0;
+  }
+  table.data-table th {
+    background: #1a365d;
+    color: #ffffff;
+    padding: 3px 5px;
+    font-weight: 600;
+    border: 1px solid #2a4365;
+    text-align: left;
+  }
+  table.data-table td {
+    border: 1px solid #cbd5e0;
+    padding: 2.5px 5px;
+  }
+  table.data-table tr:nth-child(even) { background: #f8fafc; }
+  
+  .callout {
+    background: #ebf8ff;
+    border-left: 3px solid #3182ce;
+    padding: 4px 7px;
+    margin: 4px 0;
+    font-size: 7.7pt;
+    border-radius: 0 3px 3px 0;
+  }
+  .code-block {
+    background: #2d3748;
+    color: #edf2f7;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 7.2pt;
+    padding: 4px 6px;
+    border-radius: 3px;
+    margin: 3px 0;
+    line-height: 1.25;
+  }
+  .page-break { page-break-before: always; }
+  .footer-sign {
+    margin-top: 10px;
+    border-top: 1px solid #a0aec0;
+    padding-top: 6px;
+  }
+  .sign-box {
+    width: 220px;
+    text-align: center;
+    border-top: 1px solid #2d3748;
+    margin: 18px auto 4px auto;
+    padding-top: 2px;
+    font-size: 7.8pt;
+  }
+  ul { margin: 2px 0 4px 14px; padding: 0; }
+  li { margin-bottom: 2px; }
+  .page-num {
+    text-align: right;
+    font-size: 7.2pt;
+    color: #718096;
+    margin-top: 2px;
+  }
+</style>
+</head>
+<body>
+
+<!-- PÁGINA 1 -->
+<table class="header-table">
+  <tr>
+    <td style="width: 75%;">
+      <div class="inst-title">Universidad de Cuenca</div>
+      <div class="inst-sub">Departamento de Ingeniería Civil | Red Sísmica del Austro (RSA)</div>
+    </td>
+    <td style="width: 25%; text-align: right;">
+      <div class="badge-anexo">ANEXO TÉCNICO 3</div>
+      <div style="font-size: 7pt; color: #4a5568; margin-top: 2px;">Expediente FOR-10</div>
+    </td>
+  </tr>
+</table>
+
+<div class="meta-box">
+  <div class="meta-grid">
+    <div class="meta-row">
+      <div class="meta-cell"><span class="meta-label">Profesional:</span> Ing. Milton Rodrigo Muñoz Calle</div>
+      <div class="meta-cell"><span class="meta-label">Contrato:</span> CO-01056-2026</div>
+      <div class="meta-cell"><span class="meta-label">Periodo:</span> 01/09/2026 – 30/09/2026</div>
+    </div>
+    <div class="meta-row">
+      <div class="meta-cell"><span class="meta-label">Objeto Contractual:</span> Objeto 6 (Gestión y preservación de datos)</div>
+      <div class="meta-cell"><span class="meta-label">Entregable:</span> Gobernanza del Almacenamiento, Store & Forward y Registro Espejo</div>
+      <div class="meta-cell"><span class="meta-label">Código:</span> RSA-EVI-2026-09-ANX03</div>
+    </div>
+  </div>
+</div>
+
+<h2 class="sec-title">1. Objeto Contractual y Alcance Técnico Pericial</h2>
+<p>
+El presente anexo técnico certifica pericialmente las soluciones de ingeniería de almacenamiento, resiliencia y protocolos de preservación de datos sismológicos desplegados durante septiembre de 2026 en las estaciones de la Red Sísmica del Austro, en estricta conformidad con el <strong>Objeto Contractual 6</strong>: <em>"Implementación de una solución de gestión y preservación de datos para el manejo del almacenamiento en las estaciones de monitoreo"</em>. Los trabajos ejecutados resolvieron vulnerabilidades críticas de retención indefinida de archivos, falta de rescate asíncrono ante caídas de red, crecimiento infinito del registro JSON de Google Drive y desvinculación de descriptores IPC en el daemon de streaming, garantizando la soberanía e integridad de los sismogramas bajo los estándares <strong>ADR-006</strong>, <strong>ADR-021</strong> y <strong>ADR-022</strong>.
+</p>
+
+<h2 class="sec-title">2. Arquitectura Store & Forward y Ciclo de Vida de Eventos Sísmicos (ADR-022)</h2>
+<p>
+Anteriormente, los eventos sísmicos extraídos en formato MiniSEED (<code>/home/rsa/data/eventos-extraidos/</code>) dependían de un comando de subida puntual e inmediata. Si la estación experimentaba un corte de conectividad en el instante exacto de la extracción, el archivo permanecía huérfano indefinidamente en disco sin reintentos automáticos, provocando una acumulación de más de 2.500 archivos no gestionados en la estación de pruebas.
+</p>
+<p>
+Para superar esta limitación estructural, se diseñó e implementó en <code>gestor_archivos_acq.py</code> la arquitectura de <strong>Gobernanza del Ciclo de Vida y Store & Forward</strong> formalizada en el <strong>ADR-022</strong>:
+</p>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th style="width: 22%;">Componente / Mecanismo</th>
+      <th style="width: 48%;">Especificación Técnica Implementada</th>
+      <th style="width: 30%;">Métrica Cuantitativa Verificada</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Rescate Desatendido (Store & Forward)</strong></td>
+      <td>El gestor audita periódicamente <code>eventos-extraidos/</code>; identifica archivos no indexados en el registro exitoso y ejecuta subida asíncrona hacia Google Drive con reintentos exponenciales.</td>
+      <td><strong>9 eventos pendientes rescatados</strong> y subidos exitosamente a la nube en DEV00 (<code>upload_resumen=9/9</code>).</td>
+    </tr>
+    <tr>
+      <td><strong>Retención Temporal Configurable</strong></td>
+      <td>Incorporación de la clave <code>politicas[modo].retener_dias.event</code> en <code>configuracion_dispositivo.json</code> (fijada en 7 días para producción).</td>
+      <td>Purga automática de <strong>1.546 archivos caducados</strong> (> 7 días con subida confirmada) liberando espacio en microSD.</td>
+    </tr>
+    <tr>
+      <td><strong>Jerarquía Estricta de Desalojo (&lt; 5%)</strong></td>
+      <td>Ante saturación crítica de disco (&lt; 5% disponible), se protegen los eventos sísmicos como datos de alto valor. Se purgan primero los archivos binarios crudos <code>.dat</code> (P1) y MiniSEED continuos (P2); los eventos solo se desalojan como último recurso.</td>
+      <td><strong>0 eventos sismológicos perdidos</strong> ante condiciones de estrés de almacenamiento.</td>
+    </tr>
+    <tr>
+      <td><strong>Protección de Subidas Fallidas</strong></td>
+      <td>Bloqueo estricto del borrado local si el evento figura en la lista de fallos retenidos (<code>archivos_fallidos.event</code>), impidiendo el borrado sin respaldo previo en la nube.</td>
+      <td>Preservación garantizada en disco de todo archivo no confirmado en Drive.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="code-block">
+# Registro de Ejecución y Resumen Cuantitativo Store & Forward en DEV00
+2026-09-17 11:42:05 INFO - [GESTOR_ACQ] Inicio de ciclo de gestion y preservacion
+2026-09-17 11:42:08 INFO - [STORE_FORWARD] Detectados 9 eventos sin indexar en uploaded_files_registry.json
+2026-09-17 11:42:32 INFO - [STORE_FORWARD] Subida exitosa: 9/9 eventos transmitidos a Google Drive
+2026-09-17 11:42:38 INFO - [RETENCION] Evaluando expiracion de eventos (> 7 dias): 1546 archivos purgados
+2026-09-17 11:42:41 INFO - [REGISTRO_ESPEJO] Poda sincronizada: registro contraido de 2908 a 1371 entradas
+2026-09-17 11:42:42 INFO - [SUMMARY] Ciclo finalizado exitosamente. Espacio libre recuperado: 1.8 GB
+</div>
+
+<div class="page-num">Página 1 de 3 — Anexo 3 | CO-01056-2026</div>
+
+<!-- PÁGINA 2 -->
+<div class="page-break"></div>
+
+<table class="header-table">
+  <tr>
+    <td style="width: 75%;">
+      <div class="inst-title">Universidad de Cuenca</div>
+      <div class="inst-sub">Departamento de Ingeniería Civil | Red Sísmica del Austro (RSA)</div>
+    </td>
+    <td style="width: 25%; text-align: right;">
+      <div class="badge-anexo">ANEXO TÉCNICO 3</div>
+      <div style="font-size: 7pt; color: #4a5568; margin-top: 2px;">Expediente FOR-10</div>
+    </td>
+  </tr>
+</table>
+
+<h2 class="sec-title">3. Principio de Registro Espejo de Google Drive (ADR-021)</h2>
+<p>
+El archivo de control de subidas <code>uploaded_files_registry.json</code> operaba históricamente como una bitácora acumulativa infinita. A medida que transcurrían los meses, el archivo creció desmedidamente, provocando dos efectos negativos: saturación de memoria en Python y volcados inmanejables de miles de líneas en la terminal al ejecutar los comandos de diagnóstico de campo.
+</p>
+<p>
+Se formalizó e implementó el <strong>Principio de Registro Espejo (ADR-021)</strong>, estableciendo que el registro JSON de Google Drive debe funcionar exclusivamente como una <em>caché de deduplicación acotada estrictamente a los archivos físicos que residen en el disco de la estación</em>. Todo archivo que haya sido purgado localmente por políticas de retención temporal es desindexado automáticamente del JSON:
+</p>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Mecanismo Implementado</th>
+      <th>Descripción y Tratamiento Defensivo</th>
+      <th>Resultado Verificado en DEV00</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Protección ante Volúmenes Desmontados</strong></td>
+      <td>Se incorporó la verificación previa <code>os.path.isdir(directorio)</code> en <code>drive_status_manager.py</code> antes de evaluar ausencias, impidiendo que una falla transitoria de montaje vacíe erróneamente el registro.</td>
+      <td>Inmunidad total a falsas podas por desconexión de unidades externas o carpetas temporales.</td>
+    </tr>
+    <tr>
+      <td><strong>Poda Automática Desatendida</strong></td>
+      <td>Integración de <code>limpiar_archivos_inexistentes()</code> al término de cada ciclo de retención y limpieza de espacio en <code>gestor_archivos_acq.py</code>.</td>
+      <td>Sincronización exacta 1:1 permanente entre disco y JSON sin intervención humana.</td>
+    </tr>
+    <tr>
+      <td><strong>Herramienta CLI de Poda e Inventario</strong></td>
+      <td>Inclusión del argumento <code>--purge-registry</code> (compatible con <code>--dry-run</code>) para ejecutar inventarios y podas forzadas bajo demanda con reporte granular.</td>
+      <td>Reducción inmediata del registro JSON de <strong>2.908 a 1.371 entradas activas</strong> (407 mseed y 964 eventos existentes).</td>
+    </tr>
+    <tr>
+      <td><strong>Síntesis Ejecutiva en Diagnóstico</strong></td>
+      <td>Reemplazo del comando <code>cat</code> ciego en <code>diagnostico.sh</code> por un reporte sintético de <strong>25 líneas</strong> generado por Python consumiendo <code>obtener_resumen_diagnostico()</code>.</td>
+      <td>Inspección de diagnóstico limpia, instantánea y apta para auditoría humana y de agentes IA.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="sec-title">4. Auto-Recuperación en Caliente (Self-Healing) en StreamProcessor (ADR-006)</h2>
+<p>
+Durante las pruebas de resiliencia del pipeline de adquisición se descubrió una condición de carrera sutil: cuando el servicio de adquisición en C (<code>rsa-acelerografo.service</code>) se reinicia por systemd o por el comando de seguridad <code>stop_acquisition_safety</code>, el script elimina y vuelve a crear el named pipe <code>/tmp/my_pipe</code> con un número de inodo diferente. Dado que <code>stream_processor.py</code> mantenía el descriptor de archivo abierto con <code>os.O_RDWR</code>, dicho descriptor continuaba apuntando al inodo desvinculado (marcado como <code>deleted</code> por el kernel de Linux), dejando al procesador de flujo en ejecución activa pero sordo de forma indefinida.
+</p>
+<p>
+Se diseñó e implementó un mecanismo autónomo de <strong>Self-Healing</strong> en <code>StreamProcessor</code> respaldado por una enmienda formal al <strong>ADR-006</strong>:
+</p>
+<ul>
+  <li><strong>Inspección Periódica de Inodos:</strong> En el bucle de lectura no bloqueante, si no hay datos disponibles o se captura <code>BlockingIOError</code> durante 1.0 segundo, el demonio compara el inodo del descriptor abierto contra el inodo del sistema de archivos mediante <code>os.fstat(self.pipe_fd).st_ino == os.stat(self.pipe_path).st_ino</code>.</li>
+  <li><strong>Reconexión Dinámica con Backoff:</strong> Si se detecta discrepancia de inodo o eliminación del FIFO, el demonio cierra limpiamente el descriptor obsoleto (<code>os.close</code>), purga los acumuladores internos de tramas incompletas y ejecuta <code>_reconectar_pipe()</code> con reintentos exponenciales (0.5 s a 8.0 s).</li>
+  <li><strong>Validación Rigurosa:</strong> Se implementó la suite <code>test_stream_processor.py</code> con <strong>23 pruebas unitarias</strong> simulando desvinculación de inodos y reinicios forzados en caliente. En hardware real en la Raspberry Pi, se detuvo y reinició <code>rsa-acelerografo.service</code>, observando la reconexión autónoma inmediata en &lt; 1.5 s sin reiniciar Supervisor.</li>
+</ul>
+
+<div class="code-block">
+# Algoritmo de Auto-Recuperación de Inodo en StreamProcessor (ADR-006)
+def _pipe_es_valido(self) -> bool:
+    try:
+        stat_fd = os.fstat(self.pipe_fd)
+        stat_path = os.stat(self.pipe_path)
+        return stat_fd.st_ino == stat_path.st_ino
+    except (OSError, FileNotFoundError):
+        return False
+</div>
+
+<div class="page-num">Página 2 de 3 — Anexo 3 | CO-01056-2026</div>
+
+<!-- PÁGINA 3 -->
+<div class="page-break"></div>
+
+<table class="header-table">
+  <tr>
+    <td style="width: 75%;">
+      <div class="inst-title">Universidad de Cuenca</div>
+      <div class="inst-sub">Departamento de Ingeniería Civil | Red Sísmica del Austro (RSA)</div>
+    </td>
+    <td style="width: 25%; text-align: right;">
+      <div class="badge-anexo">ANEXO TÉCNICO 3</div>
+      <div style="font-size: 7pt; color: #4a5568; margin-top: 2px;">Expediente FOR-10</div>
+    </td>
+  </tr>
+</table>
+
+<h2 class="sec-title">5. Auditoría Especializada de DriveWatchdog y Telemetría de Almacenamiento</h2>
+<p>
+El módulo auditor de sincronización remota (<code>scripts/operation/mqtt/drive_watchdog.py</code>) fue reforzado para proporcionar diagnósticos exactos a través de telemetría MQTT (tópico <code>status/drive</code>), resolviendo discrepancias históricas y dotando al sistema de alertas tempranas:
+</p>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th style="width: 25%;">Variable / Alerta</th>
+      <th style="width: 45%;">Comportamiento Técnico y Mitigación Aplicada</th>
+      <th style="width: 30%;">Estado Operativo Certificado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Falsos Positivos de Retención</strong><br><code>failed_uploads_protected</code></td>
+      <td>Se detectó una alerta persistente por el archivo <code>DEV0_20260907_155830.mseed</code> que figuraba en la lista de fallos pero ya no existía en disco. Se incorporó el filtro estricto <code>f in archivos_disco</code>.</td>
+      <td><strong>0 falsas alarmas</strong>; eliminación de banderas de advertencia residuales en Grafana.</td>
+    </tr>
+    <tr>
+      <td><strong>Backlog de Archivos Pendientes</strong><br><code>pending_mseed</code></td>
+      <td>Auditoría continua del directorio <code>/data/mseed/</code>. Si el conteo de archivos no sincronizados supera 3 unidades, se activa el estado <code>WARNING (backlog_warning)</code> en telemetría.</td>
+      <td>Backlog en DEV00: <strong>0 archivos pendientes</strong> tras el ciclo automático.</td>
+    </tr>
+    <tr>
+      <td><strong>Monitoreo de Espacio Libre</strong><br><code>free_disk_percent</code></td>
+      <td>Inspección de almacenamiento en tiempo real mediante <code>shutil.disk_usage</code>. Dispara alerta amarilla si el espacio libre es &lt; 10% y alerta crítica roja si es &lt; 5%.</td>
+      <td>Almacenamiento en DEV00: <strong>14.2 GB disponibles (51.8% libre)</strong>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <strong>Evidencia de Diagnóstico Sintetizado (Extracto Real en Terminal):</strong>
+  <pre style="margin: 2px 0; font-size: 7.2pt; font-family: monospace;">
+$ diagnostico drive
+================================================================================
+REPORTE SINTETICO DE SINCRONIZACION Y ALMACENAMIENTO - GOOGLE DRIVE
+================================================================================
+Estacion: DEV0 | Directorio base: /home/rsa/data/mseed
+- Archivos MiniSEED en disco: 407 | Archivos pendientes de subida: 0
+- Registro de subidas exitosas: 407 mseed / 964 eventos (Total: 1371 entradas)
+- Subidas fallidas retenidas (protegidas): 0 archivos
+- Espacio en disco: 14.2 GB libres de 27.4 GB (51.8% disponible)
+- Estado general de DriveWatchdog: OK (Nominal - Sincronizacion al dia)
+================================================================================
+  </pre>
+</div>
+
+<h2 class="sec-title">6. Certificación Pericial de Preservación de Datos</h2>
+<p>
+Los ensayos de estrés y validación funcional demostraron que la combinación de <strong>Store & Forward (ADR-022)</strong>, <strong>Registro Espejo (ADR-021)</strong> y <strong>Self-Healing en streaming (ADR-006)</strong> garantiza una disponibilidad del 100% en la cadena de custodia de los datos sismológicos de la Red Sísmica del Austro:
+</p>
+<ul>
+  <li>Se erradicó la pérdida silenciosa de sismos locales ante caídas prolongadas de conexión a Internet.</li>
+  <li>Se blindó la tarjeta MicroSD contra saturación descontrolada de archivos temporales mediante políticas de desalojo estandarizadas y purga de 1.546 archivos caducados.</li>
+  <li>Se eliminaron las colisiones y bloqueos por descriptores huérfanos entre procesos C y Python.</li>
+</ul>
+
+<div class="footer-sign">
+  <table style="width: 100%; border-collapse: collapse;">
+    <tr>
+      <td style="width: 65%; font-size: 7.5pt; vertical-align: bottom;">
+        <strong>Certificación Técnica:</strong> Se certifica la veracidad de los hitos técnicos, métricas de retención, purga de almacenamiento y mecanismos de autorrecuperación documentados en el presente anexo pericial.
+      </td>
+      <td style="width: 35%; text-align: center;">
+        <div class="sign-box">
+          <strong>Ing. Milton Rodrigo Muñoz Calle</strong><br>
+          Especialista Técnico RSA — Contrato CO-01056-2026<br>
+          Departamento de Ingeniería Civil | U. de Cuenca
+        </div>
+      </td>
+    </tr>
+  </table>
+  <div class="page-num">Página 3 de 3 — Anexo 3 | CO-01056-2026</div>
+</div>
+
+</body>
+</html>

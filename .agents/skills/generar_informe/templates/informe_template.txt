@@ -1,0 +1,27 @@
+1. Ensamblado, configuración e instalación de estaciones digitales con 6 componentes para la actualización y ampliación de la red de monitoreo sísmico, integrando arquitecturas IoT para la transmisión distribuida de datos.
+- Estado: {{ESTADO_OBJ_1}}
+{{DETALLE_OBJ_1}}
+
+2. Implementación de funcionalidades de autodetección de eventos mediante técnicas basadas en machine learning y acceso a datos en tiempo real.
+- Estado: {{ESTADO_OBJ_2}}
+{{DETALLE_OBJ_2}}
+
+3. Ensamblado, configuración e instalación de acelerógrafos de 3 componentes con integración a la red de digitalizadores de 6 componentes.
+- Estado: {{ESTADO_OBJ_3}}
+{{DETALLE_OBJ_3}}
+
+4. Configuración, instalación y mantenimiento de los sistemas desarrollados para el monitoreo automatizado de variables estáticas en las presas propiedad de Elecaustro.
+- Estado: {{ESTADO_OBJ_4}}
+{{DETALLE_OBJ_4}}
+
+5. Administración de la red de sensores distribuidos en la presa, garantizando la recolección y transmisión precisa de datos en tiempo real.
+- Estado: {{ESTADO_OBJ_5}}
+{{DETALLE_OBJ_5}}
+
+6. Implementación de una solución de gestión y preservación de datos para el manejo del almacenamiento en las estaciones de monitoreo.
+- Estado: {{ESTADO_OBJ_6}}
+{{DETALLE_OBJ_6}}
+
+7. Implementación de un sistema de visualización y monitoreo de métricas operativas basado en protocolos de telemetría ligera.
+- Estado: {{ESTADO_OBJ_7}}
+{{DETALLE_OBJ_7}}

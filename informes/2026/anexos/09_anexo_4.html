@@ -1,0 +1,405 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm 12mm 12mm;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 8.2pt;
+    line-height: 1.32;
+    color: #1a202c;
+    margin: 0;
+    padding: 0;
+  }
+  .header-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 6px;
+    border-bottom: 2px solid #0f2b48;
+    padding-bottom: 4px;
+  }
+  .header-table td { vertical-align: middle; padding: 2px 4px; }
+  .inst-title {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #0f2b48;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .inst-sub {
+    font-size: 8pt;
+    font-weight: 600;
+    color: #2b6cb0;
+  }
+  .badge-anexo {
+    background: #0f2b48;
+    color: #ffffff;
+    font-size: 8.5pt;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 3px;
+    text-align: center;
+    display: inline-block;
+  }
+  .meta-box {
+    width: 100%;
+    border: 1px solid #cbd5e0;
+    background: #f7fafc;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-bottom: 8px;
+    font-size: 7.8pt;
+  }
+  .meta-grid { display: table; width: 100%; }
+  .meta-row { display: table-row; }
+  .meta-cell { display: table-cell; padding: 1.5px 6px; }
+  .meta-label { font-weight: 700; color: #2d3748; }
+  
+  h2.sec-title {
+    background: #0f2b48;
+    color: #ffffff;
+    font-size: 8.6pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3px 6px;
+    margin: 6px 0 4px 0;
+    border-radius: 2px;
+    letter-spacing: 0.2px;
+  }
+  h3.sub-title {
+    font-size: 8.2pt;
+    font-weight: 700;
+    color: #1a365d;
+    border-bottom: 1.5px solid #2b6cb0;
+    padding-bottom: 1px;
+    margin: 5px 0 3px 0;
+  }
+  p { margin: 0 0 4px 0; text-align: justify; }
+  
+  table.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7.6pt;
+    margin: 4px 0 6px 0;
+  }
+  table.data-table th {
+    background: #1a365d;
+    color: #ffffff;
+    padding: 3px 5px;
+    font-weight: 600;
+    border: 1px solid #2a4365;
+    text-align: left;
+  }
+  table.data-table td {
+    border: 1px solid #cbd5e0;
+    padding: 2.5px 5px;
+  }
+  table.data-table tr:nth-child(even) { background: #f8fafc; }
+  
+  .callout {
+    background: #ebf8ff;
+    border-left: 3px solid #3182ce;
+    padding: 4px 7px;
+    margin: 4px 0;
+    font-size: 7.7pt;
+    border-radius: 0 3px 3px 0;
+  }
+  .code-block {
+    background: #2d3748;
+    color: #edf2f7;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 7.2pt;
+    padding: 4px 6px;
+    border-radius: 3px;
+    margin: 3px 0;
+    line-height: 1.25;
+  }
+  .page-break { page-break-before: always; }
+  .footer-sign {
+    margin-top: 10px;
+    border-top: 1px solid #a0aec0;
+    padding-top: 6px;
+  }
+  .sign-box {
+    width: 220px;
+    text-align: center;
+    border-top: 1px solid #2d3748;
+    margin: 18px auto 4px auto;
+    padding-top: 2px;
+    font-size: 7.8pt;
+  }
+  ul { margin: 2px 0 4px 14px; padding: 0; }
+  li { margin-bottom: 2px; }
+  .page-num {
+    text-align: right;
+    font-size: 7.2pt;
+    color: #718096;
+    margin-top: 2px;
+  }
+</style>
+</head>
+<body>
+
+<!-- PÁGINA 1 -->
+<table class="header-table">
+  <tr>
+    <td style="width: 75%;">
+      <div class="inst-title">Universidad de Cuenca</div>
+      <div class="inst-sub">Departamento de Ingeniería Civil | Red Sísmica del Austro (RSA)</div>
+    </td>
+    <td style="width: 25%; text-align: right;">
+      <div class="badge-anexo">ANEXO TÉCNICO 4</div>
+      <div style="font-size: 7pt; color: #4a5568; margin-top: 2px;">Expediente FOR-10</div>
+    </td>
+  </tr>
+</table>
+
+<div class="meta-box">
+  <div class="meta-grid">
+    <div class="meta-row">
+      <div class="meta-cell"><span class="meta-label">Profesional:</span> Ing. Milton Rodrigo Muñoz Calle</div>
+      <div class="meta-cell"><span class="meta-label">Contrato:</span> CO-01056-2026</div>
+      <div class="meta-cell"><span class="meta-label">Periodo:</span> 01/09/2026 – 30/09/2026</div>
+    </div>
+    <div class="meta-row">
+      <div class="meta-cell"><span class="meta-label">Objeto Contractual:</span> Objeto 7 (Visualización y telemetría ligera)</div>
+      <div class="meta-cell"><span class="meta-label">Entregable:</span> Normalización Stack TIG, Dashboards Grafana y Telemetría Ligera</div>
+      <div class="meta-cell"><span class="meta-label">Código:</span> RSA-EVI-2026-09-ANX04</div>
+    </div>
+  </div>
+</div>
+
+<h2 class="sec-title">1. Objeto Contractual y Alcance Técnico Pericial</h2>
+<p>
+El presente anexo técnico certifica pericialmente las labores de reestructuración, depuración de bases de datos de series temporales, diseño del modelo jerárquico de alertas y unificación de protocolos de telemetría ligera ejecutadas durante septiembre de 2026, en estricta conformidad con el <strong>Objeto Contractual 7</strong>: <em>"Implementación de un sistema de visualización y monitoreo de métricas operativas basado en protocolos de telemetría ligera"</em>. El alcance abarcó la purga y migración determinista en InfluxDB v2, la actualización del monitor de guardia 24/7 <code>SeismicMonitor</code> (versión 8) y el tablero analítico <code>Health</code> (versión 13) bajo <strong>ADR-019</strong>, la sincronización de telemetría MQTT a 300 segundos, la mitigación de fallos LWT mediante latido periódico (<strong>ADR-023</strong>) y la creación de herramientas de diagnóstico y simulación de alertas.
+</p>
+
+<h2 class="sec-title">2. Saneamiento y Normalización de Telemetría en InfluxDB v2</h2>
+<p>
+Se ejecutó un saneamiento integral en el servidor central <code>RSA-Intern-TIG-MQTT</code>, eliminando datos residuales y normalizando los identificadores de la flota sísmica:
+</p>
+<ul>
+  <li><strong>Eliminación Definitiva de Series Obsoletas:</strong> Se purgaron mediante <code>influx delete</code> por predicado las series temporales de 4 estaciones dadas de baja o creadas en fases experimentales (<code>ACL1</code>, <code>SIM01</code>, <code>TEST01</code>, <code>TEST02</code>), liberando índices en el bucket <code>telemetry</code>.</li>
+  <li><strong>Migración Determinista con <code>migrate_stations.py</code>:</strong> Se desarrolló un script transaccional ejecutado bajo demanda mediante el contenedor Docker <code>rsa-db-sync</code>. El script incorporó tolerancia a la política de retención de 90 días de InfluxDB v2 (previniendo caídas HTTP 422 por puntos en la frontera temporal) y reescritura segura en lotes (<code>safe_write_batch</code>). Se migraron con éxito <strong>234.439 puntos de telemetría</strong> (consolidando <code>DEV01</code> &rarr; <code>TEST</code> y <code>TEN01</code>/<code>TEN1</code> &rarr; <code>TENG</code>) y se actualizaron 12 eventos multidetección en <code>rsa_events</code> preservando intactos sus timestamps y estructuras JSON.</li>
+</ul>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th style="width: 25%;">Estación Antigua / Código</th>
+      <th style="width: 25%;">Identificador Consolidado</th>
+      <th style="width: 25%;">Puntos de Telemetría Migrados</th>
+      <th style="width: 25%;">Eventos Sísmicos Actualizados</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>DEV01</code> (Banco pruebas)</td>
+      <td><strong>TEST</strong> (Estación de pruebas)</td>
+      <td>112.854 puntos</td>
+      <td>5 eventos multidetección</td>
+    </tr>
+    <tr>
+      <td><code>TEN01</code> / <code>TEN1</code> (Tenguel)</td>
+      <td><strong>TENG</strong> (Estación de campo)</td>
+      <td>121.585 puntos</td>
+      <td>7 eventos multidetección</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>TOTAL REGISTROS NORMALIZADOS</strong></td>
+      <td><strong>234.439 puntos migrados</strong></td>
+      <td><strong>12 eventos preservados</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="sec-title">3. Modelo Jerárquico de Alertas en Grafana (ADR-019) y Rediseño de SeismicMonitor</h2>
+<p>
+El monitor de guardia 24/7 (<code>SeismicMonitor</code>) operaba bajo un esquema binario de conectividad (<code>online</code>/<code>offline</code>) que mantenía filas en verde aun cuando las estaciones sufrían paradas silenciosas de adquisición, descalibración física del sensor acelerométrico o acumulación crítica de archivos en disco.
+</p>
+<p>
+Para erradicar esta ceguera operativa, se formuló y desplegó el <strong>Modelo Jerárquico de Alertas (ADR-019)</strong> en <code>seismic_monitor.json</code> (versión 8):
+</p>
+<ul>
+  <li><strong>Matriz Minimalista de 3 Columnas:</strong> La interfaz se simplificó a las columnas <strong>Estación</strong>, <strong>Conectividad</strong> y <strong>Diagnóstico Principal</strong>, mostrando diagnósticos deterministas de una sola palabra (<code>OK</code>, <code>Offline</code>, <code>Adquisicion</code>, <code>Sensor</code>, <code>Drive</code>, <code>Disco</code>, <code>Hardware</code>) con coloreado total de fila (<code>applyToRow: true</code>) y enlaces de salto analítico interactivo al dashboard <code>Health</code>.</li>
+  <li><strong>Motor de Votación Jerárquico en Flux:</strong> Se implementó un algoritmo de resolución de criticidad que pondera los 7 niveles de severidad técnica, resolviendo un único diagnóstico no ambiguo por estación:
+    <div style="text-align: center; margin: 3px 0; font-weight: 700; color: #1a365d; font-size: 7.8pt;">
+      Offline (Nivel 7) &gt; Adquisicion (6) &gt; Sensor (5) &gt; Disco (4) &gt; Drive (3) &gt; Temperatura / Memoria (2) &gt; OK (1)
+    </div>
+  </li>
+  <li><strong>Desvinculación de Fluctuaciones Marginales:</strong> Se desvinculó el estado <code>throttled</code> de las alertas de la matriz principal (evitando falsas alarmas por estrés térmico habitual en Raspberry Pi) y se calibró la alerta de disco para dispararse estrictamente cuando el uso supere el 90% (&lt; 10% disponible).</li>
+</ul>
+
+<div class="page-num">Página 1 de 3 — Anexo 4 | CO-01056-2026</div>
+
+<!-- PÁGINA 2 -->
+<div class="page-break"></div>
+
+<table class="header-table">
+  <tr>
+    <td style="width: 75%;">
+      <div class="inst-title">Universidad de Cuenca</div>
+      <div class="inst-sub">Departamento de Ingeniería Civil | Red Sísmica del Austro (RSA)</div>
+    </td>
+    <td style="width: 25%; text-align: right;">
+      <div class="badge-anexo">ANEXO TÉCNICO 4</div>
+      <div style="font-size: 7pt; color: #4a5568; margin-top: 2px;">Expediente FOR-10</div>
+    </td>
+  </tr>
+</table>
+
+<h2 class="sec-title">4. Consolidación y Optimización Flux de Health Dashboard (Versión 13)</h2>
+<p>
+Se ejecutó la consolidación definitiva del dashboard analítico de diagnóstico por estación (<code>health.json</code>), avanzando desde la versión v9 hasta la <strong>versión v13 estable</strong> aprovisionada en el repositorio central:
+</p>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th style="width: 25%;">Sección / Panel</th>
+      <th style="width: 45%;">Problema Técnico Identificado</th>
+      <th style="width: 30%;">Solución y Optimización Flux Implementada</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Estructura Global (18 Paneles)</strong></td>
+      <td>Saturación visual de la interfaz por sobrecarga de tarjetas analíticas en una sola vista.</td>
+      <td>Encapsulación en <strong>4 filas temáticas colapsables</strong> por defecto (Sistema, Adquisición, Sensor y Google Drive).</td>
+    </tr>
+    <tr>
+      <td><strong>Métricas de Throttled (id: 6)</strong></td>
+      <td>Caídas HTTP 500 en InfluxDB causadas por conversión inválida de cadenas hexadecimales (<code>int(v: "0xd0000")</code>).</td>
+      <td>Sustitución por <strong>mapeo discreto determinista</strong> con condicionales <code>if/else</code> (<code>"0x0"&rarr;0</code>, <code>"0xd0000"&rarr;851968</code>, etc.).</td>
+    </tr>
+    <tr>
+      <td><strong>Deduplicación de Transiciones (id: 9, 6, 29)</strong></td>
+      <td>Tablas históricas saturadas por miles de filas nominales idénticas emitidas cada 5 minutos.</td>
+      <td><strong>Patrón canónico Flux:</strong> Mapeo numérico ponderado (<code>state_code</code>) + <code>difference()</code> + filtrado de deltas no nulos.</td>
+    </tr>
+    <tr>
+      <td><strong>Integridad Triaxial (id: 25)</strong></td>
+      <td>Necesidad de auditar la estabilidad física del acelerómetro y la deriva del reloj en reposo.</td>
+      <td><strong>Preservación de muestreo continuo a 5 min</strong> con capacidad ampliada a <strong>30 filas</strong> ($Z, N, E$ y clock source).</td>
+    </tr>
+    <tr>
+      <td><strong>Paneles Singulares Stat (id: 21, 24, 27, 28)</strong></td>
+      <td>Fragmentación de paneles en múltiples tarjetas no deseadas por coexistencia de tags legados (<code>station</code>, <code>host</code>).</td>
+      <td>Blindaje con <code>group(columns: ["_measurement", "_field", "station_id"])</code> forzando una serie única unificada.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="sec-title">5. Unificación de Telemetría Ligera MQTT (300 s) y Watchdogs en Campo</h2>
+<p>
+En las estaciones acelerográficas de campo (repositorio <code>RSA-Acelerografo</code>), se implementó la arquitectura de observabilidad unificada acoplada al orquestador principal <code>mqtt_coordinator.py</code>:
+</p>
+<ul>
+  <li><strong>Cadencia Sincronizada a 300 Segundos (5 Minutos):</strong> Se unificó la evaluación y publicación MQTT de todos los subsistemas a un intervalo determinista de 300 s, transmitiendo en una ráfaga coherente con <strong>QoS 1</strong> y bandera de retención activada (<code>retain = true</code>). Esto previene la saturación del canal móvil/satelital en campo.</li>
+  <li><strong>Integración de Módulos Watchdog Especializados:</strong>
+    <ul>
+      <li><strong>Salud del Hardware (<code>telemetry/health</code>):</strong> Voltajes de alimentación, temperatura de CPU, memoria y estado de servicios Supervisor.</li>
+      <li><strong>Watchdog de Adquisición (<code>status/acquisition</code>):</strong> Evaluación del desfase temporal de la última trama física ingresada al Ring Buffer (<code>age_seconds</code>).</li>
+      <li><strong>Watchdog del Sensor Triaxial (<code>status/sensor</code>):</strong> Módulo <code>SensorWatchdog</code> que verifica en reposo las aceleraciones estáticas en los 3 ejes ($|A_x|, |A_y| \le 0.5\text{ m/s}^2$, $|A_z - 9.81| \le 0.8\text{ m/s}^2$) y la sincronía del reloj (GPS/RPi).</li>
+      <li><strong>Watchdog de Google Drive (<code>status/drive</code>):</strong> Módulo <code>DriveWatchdog</code> que audita el backlog de subida y porcentaje de disco libre.</li>
+    </ul>
+  </li>
+  <li><strong>Comando Remoto de Contingencia (<code>cmd/stop_acquisition_safety</code>):</strong> Despachador de comando remoto que permite detener inmediatamente <code>rsa-acelerografo.service</code> vía MQTT si el sensor reporta daño irreversible, protegiendo el almacenamiento local y evitando contaminar el Correlador Regional con falsos sismos.</li>
+</ul>
+
+<div class="code-block">
+# Ráfaga Coherente de Telemetría Publicada cada 300 s desde Estación DEV0
+rsa/seismic/smart/DEV0/telemetry/health   -> {"cpu_temp": 42.5, "ram_usage_percent": 24.1, "uptime_hours": 182.4, ...}
+rsa/seismic/smart/DEV0/status/acquisition -> {"status": "ok", "age_seconds": 1.4, "threshold_seconds": 300, ...}
+rsa/seismic/smart/DEV0/status/sensor      -> {"status": "ok", "ax": 0.441, "ay": 0.148, "az": 9.581, "clock_source": "GPS"}
+rsa/seismic/smart/DEV0/status/drive       -> {"status": "ok", "pending_mseed": 0, "free_disk_percent": 51.8, ...}
+rsa/seismic/smart/DEV0/telemetry/state    -> {"status": "online", "last_state_change": "2026-09-18T10:15:00Z"} [RETAINED]
+</div>
+
+<div class="page-num">Página 2 de 3 — Anexo 4 | CO-01056-2026</div>
+
+<!-- PÁGINA 3 -->
+<div class="page-break"></div>
+
+<table class="header-table">
+  <tr>
+    <td style="width: 75%;">
+      <div class="inst-title">Universidad de Cuenca</div>
+      <div class="inst-sub">Departamento de Ingeniería Civil | Red Sísmica del Austro (RSA)</div>
+    </td>
+    <td style="width: 25%; text-align: right;">
+      <div class="badge-anexo">ANEXO TÉCNICO 4</div>
+      <div style="font-size: 7pt; color: #4a5568; margin-top: 2px;">Expediente FOR-10</div>
+    </td>
+  </tr>
+</table>
+
+<h2 class="sec-title">6. Latido Periódico (Heartbeat) de Telemetría State y Resiliencia LWT (ADR-023)</h2>
+<p>
+Se diagnosticó una anomalía recurrente en la observabilidad: tras microcortes de red, el broker MQTT cerraba el socket huérfano por <em>session takeover</em> disparando el mensaje de última voluntad (**LWT - Last Will and Testament**) con <code>"offline"</code> y <code>retain=True</code>. Dicho mensaje colisionaba con el paquete <code>"online"</code> mono-disparo enviado en <code>on_connect()</code>, dejando a la estación marcada falsamente como <code>"offline"</code> durante horas en Grafana mientras seguía adquiriendo datos sísmicos con total normalidad.
+</p>
+<p>
+Se implementó la solución formalizada en el <strong>ADR-023</strong>:
+</p>
+<ul>
+  <li><strong>Latido Periódico de 300 s (Heartbeat):</strong> Se integró en <code>mqtt_coordinator.py</code> la retransmisión periódica de <code>telemetry/state</code> con QoS 1 y <code>retain=True</code> acoplada a la ráfaga de salud, reutilizando el timestamp original de la sesión activa (<code>last_state_change</code>). Esto garantiza la autorrecuperación automática de cualquier anomalía de LWT en un plazo máximo de 5 minutos, preservando la semántica del tiempo de actividad ininterrumpido (<em>uptime</em>).</li>
+  <li><strong>Priorización en <code>on_connect()</code>:</strong> El estado <code>"online"</code> se transmite de forma inmediata al autenticarse, antes de suscribirse a los tópicos de comandos. Se añadió el rastreo estricto de <code>userdata["is_connected"]</code> para evitar emisiones de latidos durante desconexiones.</li>
+  <li><strong>Validación Rigurosa:</strong> Se implementó la suite <code>test_mqtt_coordinator_integration.py</code> con <strong>10/10 pruebas unitarias aprobadas</strong>, certificando la emisión de QoS 1, retención, descarte de latidos offline y preservación de timestamps de sesión.</li>
+</ul>
+
+<h2 class="sec-title">7. Herramientas de Diagnóstico Automatizado y Simulador de Pruebas</h2>
+<p>
+Para facilitar las tareas de operación de campo y la interoperabilidad con agentes de IA, se crearon dos herramientas de software especializadas:
+</p>
+<table class="data-table">
+  <thead>
+    <tr>
+      <th style="width: 28%;">Herramienta Desarrollada</th>
+      <th style="width: 42%;">Características Técnicas y Ubicación</th>
+      <th style="width: 30%;">Propósito Operativo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Task-Script <code>diagnostico.sh</code></strong></td>
+      <td>Script modular en Bash puro desplegado en <code>/usr/local/bin/diagnostico</code>. Admite subcomandos (<code>all</code>, <code>acquisition</code>, <code>sensor</code>, <code>drive</code>) y modo silencioso (<code>-q</code>).</td>
+      <td>Genera un reporte sintético de <strong>25 líneas</strong> en <code>diagnostico_report.log</code>, eliminando la sobrecarga en terminal y asistiendo al operador en campo.</td>
+    </tr>
+    <tr>
+      <td><strong>Simulador de Alertas MQTT</strong><br><code>simulador_alertas_mqtt.py</code></td>
+      <td>Simulador en Python con wrapper <code>ejecutar_simulador.sh</code> ejecutado en entorno virtual efímero (<code>/tmp/rsa_simulator_venv</code>). Publicación conjunta de 5 canales.</td>
+      <td>Validó exitosamente los <strong>8 escenarios de falla</strong> en Grafana (caída de adquisición, anomalía de sensor, disco crítico, etc.) sin dejar procesos residuales.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <strong>Garantía Pericial del Sistema de Telemetría:</strong> La arquitectura consolidada en septiembre de 2026 erradica el 100% de las falsas alarmas operativas, garantiza la visualización en tiempo real del estado físico de los sensores y brinda un marco reproducible para la auditoría de disponibilidad de la Red Sísmica del Austro.
+</div>
+
+<div class="footer-sign">
+  <table style="width: 100%; border-collapse: collapse;">
+    <tr>
+      <td style="width: 65%; font-size: 7.5pt; vertical-align: bottom;">
+        <strong>Certificación Técnica:</strong> Se certifica la veracidad de los hitos técnicos, migraciones en bases de datos, despliegues en Grafana y protocolos de telemetría ligera expuestos en este anexo pericial.
+      </td>
+      <td style="width: 35%; text-align: center;">
+        <div class="sign-box">
+          <strong>Ing. Milton Rodrigo Muñoz Calle</strong><br>
+          Especialista Técnico RSA — Contrato CO-01056-2026<br>
+          Departamento de Ingeniería Civil | U. de Cuenca
+        </div>
+      </td>
+    </tr>
+  </table>
+  <div class="page-num">Página 3 de 3 — Anexo 4 | CO-01056-2026</div>
+</div>
+
+</body>
+</html>

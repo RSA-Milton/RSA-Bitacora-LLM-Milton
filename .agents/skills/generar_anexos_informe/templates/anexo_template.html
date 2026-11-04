@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<!-- El titulo debe permanecer vacio para evitar que el motor de impresion de Edge/Chrome inserte encabezados no deseados -->
+<title></title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm 12mm 12mm;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 8.2pt;
+    line-height: 1.32;
+    color: #1a202c;
+    margin: 0;
+    padding: 0;
+  }
+  .header-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 6px;
+    border-bottom: 2px solid #0f2b48;
+    padding-bottom: 4px;
+  }
+  .header-table td { vertical-align: middle; padding: 2px 4px; }
+  .inst-title {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #0f2b48;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .inst-sub {
+    font-size: 8pt;
+    font-weight: 600;
+    color: #2b6cb0;
+  }
+  .badge-anexo {
+    background: #0f2b48;
+    color: #ffffff;
+    font-size: 8.5pt;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 3px;
+    text-align: center;
+    display: inline-block;
+  }
+  .meta-box {
+    width: 100%;
+    border: 1px solid #cbd5e0;
+    background: #f7fafc;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-bottom: 8px;
+    font-size: 7.8pt;
+  }
+  .meta-grid { display: table; width: 100%; }
+  .meta-row { display: table-row; }
+  .meta-cell { display: table-cell; padding: 1.5px 6px; }
+  .meta-label { font-weight: 700; color: #2d3748; }
+  
+  h2.sec-title {
+    background: #0f2b48;
+    color: #ffffff;
+    font-size: 8.6pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3px 6px;
+    margin: 6px 0 4px 0;
+    border-radius: 2px;
+    letter-spacing: 0.2px;
+  }
+  h3.sub-title {
+    font-size: 8.2pt;
+    font-weight: 700;
+    color: #1a365d;
+    border-bottom: 1.5px solid #2b6cb0;
+    padding-bottom: 1px;
+    margin: 5px 0 3px 0;
+  }
+  p { margin: 0 0 4px 0; text-align: justify; }
+  
+  table.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7.6pt;
+    margin: 4px 0 6px 0;
+  }
+  table.data-table th {
+    background: #1a365d;
+    color: #ffffff;
+    padding: 3px 5px;
+    font-weight: 600;
+    border: 1px solid #2a4365;
+    text-align: left;
+  }
+  table.data-table td {
+    border: 1px solid #cbd5e0;
+    padding: 2.5px 5px;
+  }
+  table.data-table tr:nth-child(even) { background: #f8fafc; }
+  
+  .callout {
+    background: #ebf8ff;
+    border-left: 3px solid #3182ce;
+    padding: 4px 7px;
+    margin: 4px 0;
+    font-size: 7.7pt;
+    border-radius: 0 3px 3px 0;
+  }
+  .callout-alert {
+    background: #fff5f5;
+    border-left: 3px solid #e53e3e;
+    padding: 4px 7px;
+    margin: 4px 0;
+    font-size: 7.7pt;
+    border-radius: 0 3px 3px 0;
+  }
+  .code-block {
+    background: #2d3748;
+    color: #edf2f7;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 7.2pt;
+    padding: 4px 6px;
+    border-radius: 3px;
+    margin: 3px 0;
+    line-height: 1.25;
+  }
+  .page-break { page-break-before: always; }
+  .footer-sign {
+    margin-top: 10px;
+    border-top: 1px solid #a0aec0;
+    padding-top: 6px;
+  }
+  .sign-box {
+    width: 220px;
+    text-align: center;
+    border-top: 1px solid #2d3748;
+    margin: 18px auto 4px auto;
+    padding-top: 2px;
+    font-size: 7.8pt;
+  }
+  ul { margin: 2px 0 4px 14px; padding: 0; }
+  li { margin-bottom: 2px; }
+  .page-num {
+    text-align: right;
+    font-size: 7.2pt;
+    color: #718096;
+    margin-top: 2px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ========================================== -->
+<!-- PÁGINA 1                                   -->
+<!-- ========================================== -->
+<table class="header-table">
+  <tr>
+    <td style="width: 75%;">
+      <!-- REGLA CRITICA: Solo Universidad de Cuenca, NUNCA 'Facultad de Ingenieria' -->
+      <div class="inst-title">{{ENTIDAD_CONTRATANTE}}</div>
+      <div class="inst-sub">{{DEPENDENCIA}}</div>
+    </td>
+    <td style="width: 25%; text-align: right;">
+      <div class="badge-anexo">ANEXO TÉCNICO {{NUMERO_ANEXO}}</div>
+      <div style="font-size: 7pt; color: #4a5568; margin-top: 2px;">Expediente FOR-10</div>
+    </td>
+  </tr>
+</table>
+
+<div class="meta-box">
+  <div class="meta-grid">
+    <div class="meta-row">
+      <div class="meta-cell"><span class="meta-label">Profesional:</span> {{PROFESIONAL_NOMBRE}}</div>
+      <div class="meta-cell"><span class="meta-label">Contrato:</span> {{NUMERO_CONTRATO}}</div>
+      <div class="meta-cell"><span class="meta-label">Periodo:</span> {{PERIODO_REPORTADO}}</div>
+    </div>
+    <div class="meta-row">
+      <div class="meta-cell"><span class="meta-label">Objeto Contractual:</span> Objeto {{OBJETO_NUMERO}} ({{OBJETO_TITULO_CORTO}})</div>
+      <div class="meta-cell"><span class="meta-label">Entregable:</span> {{TITULO_ENTREGABLE}}</div>
+      <div class="meta-cell"><span class="meta-label">Código:</span> {{CODIGO_DOCUMENTAL}}</div>
+    </div>
+  </div>
+</div>
+
+<h2 class="sec-title">1. Objeto Contractual y Alcance Técnico Pericial</h2>
+<p>
+{{SECCION_1_OBJETO_Y_ALCANCE}}
+</p>
+
+<h2 class="sec-title">2. Diagnóstico Técnico, Arquitectura y Estado Inicial</h2>
+<p>
+{{SECCION_2_DIAGNOSTICO_ARQUITECTURA}}
+</p>
+
+<!-- Tablas, callouts o bloques de código según el entregable -->
+{{SECCION_2_TABLAS_O_GRAFICOS}}
+
+<div class="page-num">Página 1 de {{TOTAL_PAGINAS}} — Anexo {{NUMERO_ANEXO}} | {{NUMERO_CONTRATO}}</div>
+
+<!-- ========================================== -->
+<!-- PÁGINA 2                                   -->
+<!-- ========================================== -->
+<div class="page-break"></div>
+
+<table class="header-table">
+  <tr>
+    <td style="width: 75%;">
+      <div class="inst-title">{{ENTIDAD_CONTRATANTE}}</div>
+      <div class="inst-sub">{{DEPENDENCIA}}</div>
+    </td>
+    <td style="width: 25%; text-align: right;">
+      <div class="badge-anexo">ANEXO TÉCNICO {{NUMERO_ANEXO}}</div>
+      <div style="font-size: 7pt; color: #4a5568; margin-top: 2px;">Expediente FOR-10</div>
+    </td>
+  </tr>
+</table>
+
+<h2 class="sec-title">3. Desarrollo Técnico, Implementación y Métricas de Validación</h2>
+<p>
+{{SECCION_3_DESARROLLO_TECNICO}}
+</p>
+
+{{SECCION_3_TABLAS_METRICAS}}
+
+<h2 class="sec-title">4. Especificaciones Técnicas y Criterios Cuantitativos de Conformidad</h2>
+<p>
+{{SECCION_4_ESPECIFICACIONES_CONFORMIDAD}}
+</p>
+
+<div class="page-num">Página 2 de {{TOTAL_PAGINAS}} — Anexo {{NUMERO_ANEXO}} | {{NUMERO_CONTRATO}}</div>
+
+<!-- ========================================== -->
+<!-- PÁGINA 3 (Si el documento consta de 3 paginas) -->
+<!-- ========================================== -->
+<div class="page-break"></div>
+
+<table class="header-table">
+  <tr>
+    <td style="width: 75%;">
+      <div class="inst-title">{{ENTIDAD_CONTRATANTE}}</div>
+      <div class="inst-sub">{{DEPENDENCIA}}</div>
+    </td>
+    <td style="width: 25%; text-align: right;">
+      <div class="badge-anexo">ANEXO TÉCNICO {{NUMERO_ANEXO}}</div>
+      <div style="font-size: 7pt; color: #4a5568; margin-top: 2px;">Expediente FOR-10</div>
+    </td>
+  </tr>
+</table>
+
+<h2 class="sec-title">5. Resultados Verificados y Protocolo Operativo en Producción</h2>
+<p>
+{{SECCION_5_RESULTADOS_OPERATIVOS}}
+</p>
+
+{{SECCION_5_TABLAS_RESUMEN}}
+
+<h2 class="sec-title">6. Certificación Pericial de Responsabilidad Técnica</h2>
+<p>
+Se certifica la veracidad y rigor técnico de los registros de ingeniería, métricas cuantitativas, códigos de despliegue y criterios de aceptación documentados en este anexo técnico en el marco del cumplimiento del Objeto {{OBJETO_NUMERO}} del contrato {{NUMERO_CONTRATO}}.
+</p>
+
+<div class="footer-sign">
+  <table style="width: 100%; border-collapse: collapse;">
+    <tr>
+      <td style="width: 65%; font-size: 7.5pt; vertical-align: bottom;">
+        <strong>Certificación Técnica:</strong> Documento probatorio emitido bajo la normativa institucional de la Universidad de Cuenca para auditoría de Control Interno y descargo financiero de actividades.
+      </td>
+      <td style="width: 35%; text-align: center;">
+        <div class="sign-box">
+          <strong>{{PROFESIONAL_NOMBRE}}</strong><br>
+          Especialista Técnico RSA — Contrato {{NUMERO_CONTRATO}}<br>
+          {{DEPENDENCIA}} | {{ENTIDAD_CONTRATANTE}}
+        </div>
+      </td>
+    </tr>
+  </table>
+  <div class="page-num">Página 3 de {{TOTAL_PAGINAS}} — Anexo {{NUMERO_ANEXO}} | {{NUMERO_CONTRATO}}</div>
+</div>
+
+</body>
+</html>
