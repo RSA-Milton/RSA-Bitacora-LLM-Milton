@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -145,11 +145,11 @@
     padding-top: 6px;
   }
   .sign-box {
-    width: 220px;
+    width: 250px;
     text-align: center;
     border-top: 1px solid #2d3748;
-    margin: 18px auto 4px auto;
-    padding-top: 2px;
+    margin: 55px auto 4px auto; /* Espacio vertical amplio de 55px para firma digital */
+    padding-top: 4px;
     font-size: 7.8pt;
   }
   ul { margin: 2px 0 4px 14px; padding: 0; }
@@ -310,7 +310,7 @@ Para proteger la vida útil de las memorias flash MicroSD en las estaciones remo
 </p>
 <ul>
   <li><strong>Aislamiento de la Rama de Producción:</strong> Se purgó de la rama <code>main</code> el directorio <code>docs/</code> y las directivas internas del agente (<code>AGENTS.md</code>), manteniéndolos íntegramente en la rama <code>develop</code>. La sincronización hacia producción se formalizó mediante checkout selectivo (<code>git checkout develop -- scripts/ models/ configuration/ main-libraries/</code>).</li>
-  <li><strong>Release SemVer v4.5.2 y Despliegue en Campo:</strong> Se generó el tag Git inmutable <code>v4.5.2</code> incorporando las mejoras de resiliencia MQTT (ADR-023) y se ejecutó el despliegue escalonado en las estaciones de campo <code>CHA01</code> y <code>CHA02</code>. En <code>CHA01</code> se saneó la propiedad de los archivos de registro (<code>chown -R rsa:rsa log-files/</code>), erradicando excepciones <code>PermissionError</code> en <code>gestor_archivos_acq.py</code>. En <code>CHA02</code> se auditó la integridad física triaxial, detectando una desviación estática en el eje X ($a_x \approx 0.64\text{ g}$) con ejes Y y Z nominales, catalogada para nivelación física en próxima visita.</li>
+  <li><strong>Release SemVer v4.5.2 y Despliegue en Campo:</strong> Se generó el tag Git inmutable <code>v4.5.2</code> incorporando las mejoras de resiliencia MQTT (ADR-023) y se ejecutó el despliegue escalonado en las estaciones de campo <code>CHA01</code> y <code>CHA02</code>. En <code>CHA01</code> se saneó la propiedad de los archivos de registro (<code>chown -R rsa:rsa log-files/</code>), erradicando excepciones <code>PermissionError</code> en <code>gestor_archivos_acq.py</code>. En <code>CHA02</code> se auditó la integridad física triaxial, detectando una desviación estática en el eje X (a<sub>x</sub> ≈ 0.64 g) con ejes Y y Z nominales, catalogada para nivelación física en próxima visita.</li>
   <li><strong>Blindaje Incondicional en <code>update.sh</code> y Skill <code>despliegue_release</code>:</strong> Se integró en <code>update.sh</code> una rutina obligatoria que detecta el usuario operativo (<code>$SUDO_USER</code>) y normaliza permisos con <code>chmod -R u+rwX,g+rwX</code>. Asimismo, se creó la skill interactiva <code>despliegue_release.md</code> en el repositorio institucional <code>RSA-Agent-Toolkit</code> para asistir despliegues seguros sin violar la restricción SSHFS.</li>
 </ul>
 

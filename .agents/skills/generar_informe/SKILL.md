@@ -63,21 +63,36 @@ Las actividades del mes deben clasificarse estrictamente en uno de los siguiente
   - El campo `Mes previsto de cumplimiento` para verificar si un objeto debía ejecutarse en el mes actual y verificar en las sesiones si se cumplió o no.
 
 ### 4. Clasificación y Redacción del Entregable en Texto Plano (`XX_informe.txt`)
-Utiliza la estructura base de `templates/informe_template.txt` y clasifica las actividades recopiladas en los objetos contractuales siguiendo estas reglas estrictas:
+Utiliza la estructura base de `templates/informe_template.txt` y clasifica las actividades recopiladas en los objetos contractuales siguiendo estas reglas estrictas de formato:
 
 - **Si el objeto tuvo actividades (Ejecutado):**
-  ```text
-  N. [Texto exacto del objeto del contrato]
-  - Estado: Ejecutado
-  - Actividades realizadas: [Párrafo unificado, fluido, denso y formal en español que detalle las labores técnicas con jerga de ingeniería precisa. NO usar viñetas, listas ni guiones para describir las tareas aquí].
-  ```
+  - Encabezado con el número y texto exacto del objeto contractual.
+  - Línea de estado con viñeta y tabulación: `•	Estado: Ejecutado`
+  - Línea en blanco de separación.
+  - Lista de actividades separadas por viñetas (`•	` con tabulación), donde cada tarea inicia con un **subtítulo corto seguido de dos puntos** (`[Subtítulo corto]: [Descripción sintética con métricas y logros técnicos clave]`).
+  - **Límite de extensión estricto:** El conjunto total de tareas del objeto debe tener un **máximo de 200 palabras**, priorizando concisión, métricas reales y rigor técnico.
+  - Formato exacto:
+    ```text
+    N. [Texto exacto del objeto del contrato]
+    •	Estado: Ejecutado   
+
+    •	[Subtítulo corto 1]: [Descripción sintética y concisa de la labor, métricas verificadas y herramientas empleadas].
+    •	[Subtítulo corto 2]: [Descripción sintética y concisa de la labor, métricas verificadas y herramientas empleadas].
+    •	[Subtítulo corto 3]: [Descripción sintética y concisa de la labor, métricas verificadas y herramientas empleadas].
+    ```
+
 - **Si el objeto NO tuvo actividades (No ejecutado):**
-  ```text
-  N. [Texto exacto del objeto del contrato]
-  - Estado: No ejecutado en el presente mes.
-  - Justificación: [Redacción en español formal que justifique técnicamente el porqué no se ejecutó, en base a dependencias, importación de componentes o priorización de tareas. Evita justificaciones idénticas o repetitivas].
-  - Mes previsto de cumplimiento: [Mes previsto, ej: Octubre].
-  ```
+  - Encabezado con el número y texto exacto del objeto contractual.
+  - Línea de estado con viñeta y tabulación: `•	Estado: No ejecutado en el presente mes.`
+  - Línea de justificación técnica formal: `•	Justificación: [Redacción en español formal que justifique técnicamente el porqué no se ejecutó, en base a dependencias, importación de componentes o priorización de tareas. Evita justificaciones idénticas o repetitivas].`
+  - Línea de mes previsto: `•	Mes previsto de cumplimiento: [Mes previsto, ej: Noviembre].`
+  - Formato exacto:
+    ```text
+    N. [Texto exacto del objeto del contrato]
+    •	Estado: No ejecutado en el presente mes.
+    •	Justificación: [Redacción técnica formal de justificación].
+    •	Mes previsto de cumplimiento: [Mes previsto].
+    ```
 
 > ⚠️ **Nota Normativa Institucional (FOR-10):** Ya no se genera el archivo Markdown de evidencias para Notion (`XX_reporte.md`). Según la disposición de la Dirección Financiera, las evidencias documentales de los objetos ejecutados se gestionan como **anexos técnicos independientes en PDF** mediante la skill `generar_anexos_informe`.
 

@@ -127,11 +127,11 @@
     padding-top: 6px;
   }
   .sign-box {
-    width: 220px;
+    width: 250px;
     text-align: center;
     border-top: 1px solid #2d3748;
-    margin: 18px auto 4px auto;
-    padding-top: 2px;
+    margin: 55px auto 4px auto; /* Espacio vertical amplio de 55px para firma digital */
+    padding-top: 4px;
     font-size: 7.8pt;
   }
   ul { margin: 2px 0 4px 14px; padding: 0; }
@@ -214,7 +214,7 @@ Se ejecutó un análisis técnico retrospectivo de 11 antecedentes e iniciativas
 
 <h2 class="sec-title">3. Arquitectura del Sistema Multiplexado de 24 Canales (planificacion-12.md)</h2>
 <p>
-La estabilidad estática de las presas hidroeléctricas depende de la supervisión periódica de redes de <strong>galgas extensométricas de 4 hilos</strong> embebidas en el concreto y galerías de drenaje. Cada transductor entrega dos variables físicas acopladas fundamentales: la <strong>deformación mecánica ($\mu\epsilon$)</strong> y la <strong>temperatura interna ($^\circ\text{C}$)</strong> requerida para la compensación de deriva térmica del material. Para economizar infraestructura de acondicionamiento de ultra alta resolución, el sistema diseñado implementa un multiplexor electromecánico de 24 canales bajo una arquitectura distribuida maestro-esclavo:
+La estabilidad estática de las presas hidroeléctricas depende de la supervisión periódica de redes de <strong>galgas extensométricas de 4 hilos</strong> embebidas en el concreto y galerías de drenaje. Cada transductor entrega dos variables físicas acopladas fundamentales: la <strong>deformación mecánica (µε)</strong> y la <strong>temperatura interna (°C)</strong> requerida para la compensación de deriva térmica del material. Para economizar infraestructura de acondicionamiento de ultra alta resolución, el sistema diseñado implementa un multiplexor electromecánico de 24 canales bajo una arquitectura distribuida maestro-esclavo:
 </p>
 <ul>
   <li><strong>Controlador Esclavo de Conmutación (PIC16F628A):</strong> Microcontrolador dedicado exclusivamente al gobierno en tiempo real de dos motores de corriente continua acoplados a selectores rotativos de 12 posiciones cada uno. Incorpora un puente H <strong>L293D</strong> con algoritmo de frenado dinámico activo (<code>IN1=1, IN2=1</code>) para contrarrestar la inercia del rotor, junto con la lectura por interrupciones de encoders ópticos de ranura y detección de posición de inicio (<em>Home</em>).</li>
@@ -250,7 +250,7 @@ La estabilidad estática de las presas hidroeléctricas depende de la supervisi�
 El acondicionamiento diferencial de ultra alta resolución se basa en el convertidor <strong>HX711 (Canal A, Ganancia 128)</strong> acoplado a un circuito de conmutación mediante relés electromecánicos K1..K5:
 </p>
 <ul>
-  <li><strong>Conmutación Bimodal (Deformación / Temperatura):</strong> Para cada uno de los 24 canales, el banco de relés reconfigura el puente de Wheatstone: en el modo de deformación se mide el desbalance diferencial de la galga activa ($\Delta V \approx \text{nV}$ a $\mu\text{V}$), mientras que en el modo de temperatura se conmuta hacia la resistencia compensadora interna del transductor.</li>
+  <li><strong>Conmutación Bimodal (Deformación / Temperatura):</strong> Para cada uno de los 24 canales, el banco de relés reconfigura el puente de Wheatstone: en el modo de deformación se mide el desbalance diferencial de la galga activa (ΔV ≈ nV a µV), mientras que en el modo de temperatura se conmuta hacia la resistencia compensadora interna del transductor.</li>
   <li><strong>Supresión de Transitorios con Tiempos Muertos (Dead-Time):</strong> El firmware del ESP32 implementa una pausa incondicional de <strong>20 ms</strong> entre la desexcitación de un relé y la activación del siguiente, seguida de un retardo de estabilización mecánica de contactos (<em>settling time</em>) de <strong>50 ms</strong> antes de iniciar la conversión en el HX711, erradicando lecturas espurias inducidas por rebotes o arcos galvánicos.</li>
 </ul>
 
@@ -260,7 +260,7 @@ El procesador esclavo PIC16F628A implementa una máquina de estados determinista
 </p>
 <ul>
   <li><strong>Rutina de Homing Absoluto:</strong> Al inicio de cada ciclo de barrido o tras un reinicio, el motor DC gira hasta detectar la muesca física en el sensor óptico de referencia (<code>sens2_M1</code> / <code>sens2_M2</code>), restableciendo a cero el contador de paso absoluto.</li>
-  <li><strong>Conteo de Ranuras por Interrupción de Hardware:</strong> La señal del encoder incremental (<code>sens1_M1</code> / <code>sens1_M2</code>) ingresa por los pines de captura del PIC, asegurando un conteo insensible a retardos de bucle principal. Al alcanzar la ranura objetivo, el puente H L293D conmuta instantáneamente sus entradas a nivel alto (<code>IN1=1, IN2=1</code>), forzando el cortocircuito dinámico del rotor para detenerlo en seco con un error angular $\le \pm 0.5$ ranuras.</li>
+  <li><strong>Conteo de Ranuras por Interrupción de Hardware:</strong> La señal del encoder incremental (<code>sens1_M1</code> / <code>sens1_M2</code>) ingresa por los pines de captura del PIC, asegurando un conteo insensible a retardos de bucle principal. Al alcanzar la ranura objetivo, el puente H L293D conmuta instantáneamente sus entradas a nivel alto (<code>IN1=1, IN2=1</code>), forzando el cortocircuito dinámico del rotor para detenerlo en seco con un error angular ≤ ±0.5 ranuras.</li>
 </ul>
 
 <h3 class="sub-title">4.3. Protocolo Serie Binario Robusto Maestro–Esclavo (UART)</h3>
@@ -277,7 +277,7 @@ Si el esclavo detecta que el motor no alcanza la ranura en el tiempo límite pre
 
 <h3 class="sub-title">4.4. Datalogger Local en MicroSD y Enlace de Telemetría SCADA</h3>
 <p>
-El ESP32 consolida las variables adquiridas en una tarjeta MicroSD formateada en FAT32 (archivo <code>DATALOG.CSV</code>), estructurando cada registro con fecha y hora UTC, canal físico, valor digital crudo en 24 bits, microdeformación calculada ($\mu\epsilon$) y temperatura interna ($^\circ\text{C}$). Simultáneamente, la trama se emite por el puerto RS-232 a 115200 bps bajo estándar ASCII compatible con el sistema SCADA de la presa de Chanlud.
+El ESP32 consolida las variables adquiridas en una tarjeta MicroSD formateada en FAT32 (archivo <code>DATALOG.CSV</code>), estructurando cada registro con fecha y hora UTC, canal físico, valor digital crudo en 24 bits, microdeformación calculada (µε) y temperatura interna (°C). Simultáneamente, la trama se emite por el puerto RS-232 a 115200 bps bajo estándar ASCII compatible con el sistema SCADA de la presa de Chanlud.
 </p>
 
 <table class="data-table">
@@ -297,11 +297,11 @@ El ESP32 consolida las variables adquiridas en una tarjeta MicroSD formateada en
     <tr>
       <td><strong>Resolución Analógica</strong></td>
       <td>24 bits diferenciales (ADC HX711)</td>
-      <td>Resolución efectiva &lt; 0.1 $\mu\epsilon$ (sub-microdeformación).</td>
+      <td>Resolución efectiva &lt; 0.1 µε (sub-microdeformación).</td>
     </tr>
     <tr>
       <td><strong>Tiempo de Barrido Completo</strong></td>
-      <td>$\le 90\text{ segundos}$ para los 24 canales</td>
+      <td>≤ 90 segundos para los 24 canales</td>
       <td>Cadencia de muestreo cuasi-estática ideal para auscultación geotécnica.</td>
     </tr>
     <tr>
@@ -347,22 +347,22 @@ El plan de ingeniería <code>planificacion-12.md</code> estructura el ciclo comp
     <tr>
       <td><strong>Fase 1: Diagnóstico Eléctrico</strong></td>
       <td>Verificación circuital, estabilidad de fuentes de 5V/12V, comprobación de registros PIC y caracterización de encoders en osciloscopio digital.</td>
-      <td>Señales de encoders en cuadratura A/B limpias y sin rebote en osciloscopio; consumo de corriente en reposo $\le 150\text{ mA}$ a 12 V.</td>
+      <td>Señales de encoders en cuadratura A/B limpias y sin rebote en osciloscopio; consumo de corriente en reposo ≤ 150 mA a 12 V.</td>
     </tr>
     <tr>
       <td><strong>Fase 2: Firmware Determinista</strong></td>
       <td>Desarrollo en lenguaje C (XC8) de la máquina de estados del PIC16F628A: Homing absoluto, conteo por interrupción y frenado L293D.</td>
-      <td>Repetibilidad angular de posicionamiento en los 24 canales con error $\le \pm 0.5$ ranuras; cero desalineaciones mecánicas en selectores.</td>
+      <td>Repetibilidad angular de posicionamiento en los 24 canales con error ≤ ±0.5 ranuras; cero desalineaciones mecánicas en selectores.</td>
     </tr>
     <tr>
       <td><strong>Fase 3: Protocolo de Enlace</strong></td>
       <td>Diseño del enlace serie binario maestro-esclavo a 9600 bps con checksum XOR, timeouts dinámicos y rutina de recuperación de atascos.</td>
-      <td>Transmisión continua de 1.000 tramas consecutivas sin bloqueo mecánico ni desincronización de trama ($P_{\text{error}} &lt; 0.1\%$).</td>
+      <td>Transmisión continua de 1.000 tramas consecutivas sin bloqueo mecánico ni desincronización de trama (P<sub>error</sub> &lt; 0.1%).</td>
     </tr>
     <tr>
       <td><strong>Fase 4: Acondicionamiento ADC</strong></td>
       <td>Controlador de bajo nivel para el convertidor HX711 (24 bits) en ESP32 y secuenciamiento de relés K1..K5 con tiempos muertos.</td>
-      <td>Ruido pico a pico en reposo con resistencia patrón de $350\,\Omega \le 2\text{ LSB}$; aislamiento galvánico de transitorios con $\Delta t \ge 20\text{ ms}$.</td>
+      <td>Ruido pico a pico en reposo con resistencia patrón de 350 Ω ≤ 2 LSB; aislamiento galvánico de transitorios con Δt ≥ 20 ms.</td>
     </tr>
     <tr>
       <td><strong>Fase 5: Datalogging y SCADA</strong></td>
@@ -372,7 +372,7 @@ El plan de ingeniería <code>planificacion-12.md</code> estructura el ciclo comp
     <tr>
       <td><strong>Fase 6: Barrido y Estrés</strong></td>
       <td>Automatización del ciclo de barrido secuencial de los 24 canales, pruebas de tolerancia a fallos mecánicos y ensayo de estrés de 100 ciclos.</td>
-      <td>Tiempo total de barrido $\le 90\text{ segundos}$ ($\le 3.75\text{ s}$ por canal); ejecución ininterrumpida de 100 ciclos continuos sin fallos.</td>
+      <td>Tiempo total de barrido ≤ 90 segundos (≤ 3.75 s por canal); ejecución ininterrumpida de 100 ciclos continuos sin fallos.</td>
     </tr>
     <tr>
       <td><strong>Fase 7: Documentación Final</strong></td>

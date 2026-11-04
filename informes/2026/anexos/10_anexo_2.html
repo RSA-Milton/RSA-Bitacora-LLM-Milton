@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm 12mm 12mm;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 8.2pt;
+    line-height: 1.32;
+    color: #1a202c;
+    margin: 0;
+    padding: 0;
+  }
+  .header-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 6px;
+    border-bottom: 2px solid #0f2b48;
+    padding-bottom: 4px;
+  }
+  .header-table td { vertical-align: middle; padding: 2px 4px; }
+  .inst-title {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #0f2b48;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .inst-sub {
+    font-size: 8pt;
+    font-weight: 600;
+    color: #2b6cb0;
+  }
+  .badge-anexo {
+    background: #0f2b48;
+    color: #ffffff;
+    font-size: 8.5pt;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 3px;
+    text-align: center;
+    display: inline-block;
+  }
+  .meta-box {
+    width: 100%;
+    border: 1px solid #cbd5e0;
+    background: #f7fafc;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-bottom: 8px;
+    font-size: 7.8pt;
+  }
+  .meta-grid { display: table; width: 100%; }
+  .meta-row { display: table-row; }
+  .meta-cell { display: table-cell; padding: 1.5px 6px; }
+  .meta-label { font-weight: 700; color: #2d3748; }
+  
+  h2.sec-title {
+    background: #0f2b48;
+    color: #ffffff;
+    font-size: 8.6pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3px 6px;
+    margin: 6px 0 4px 0;
+    border-radius: 2px;
+    letter-spacing: 0.2px;
+  }
+  h3.sub-title {
+    font-size: 8.2pt;
+    font-weight: 700;
+    color: #1a365d;
+    border-bottom: 1.5px solid #2b6cb0;
+    padding-bottom: 1px;
+    margin: 5px 0 3px 0;
+  }
+  p { margin: 0 0 4px 0; text-align: justify; }
+  
+  table.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7.6pt;
+    margin: 4px 0 6px 0;
+  }
+  table.data-table th {
+    background: #1a365d;
+    color: #ffffff;
+    padding: 3px 5px;
+    font-weight: 600;
+    border: 1px solid #2a4365;
+    text-align: left;
+  }
+  table.data-table td {
+    border: 1px solid #cbd5e0;
+    padding: 2.5px 5px;
+  }
+  table.data-table tr:nth-child(even) { background: #f8fafc; }
+  
+  .callout {
+    background: #ebf8ff;
+    border-left: 3px solid #3182ce;
+    padding: 4px 7px;
+    margin: 4px 0;
+    font-size: 7.7pt;
+    border-radius: 0 3px 3px 0;
+  }
+  .callout-alert {
+    background: #fff5f5;
+    border-left: 3px solid #e53e3e;
+    padding: 4px 7px;
+    margin: 4px 0;
+    font-size: 7.7pt;
+    border-radius: 0 3px 3px 0;
+  }
+  .code-block {
+    background: #2d3748;
+    color: #edf2f7;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 7.2pt;
+    padding: 4px 6px;
+    border-radius: 3px;
+    margin: 3px 0;
+    line-height: 1.25;
+  }
+  .page-break { page-break-before: always; }
+  .footer-sign {
+    margin-top: 10px;
+    border-top: 1px solid #a0aec0;
+    padding-top: 6px;
+  }
+  .sign-box {
+    width: 250px;
+    text-align: center;
+    border-top: 1px solid #2d3748;
+    margin: 55px auto 4px auto; /* Espacio vertical amplio de 55px para firma digital */
+    padding-top: 4px;
+    font-size: 7.8pt;
+  }
+  ul { margin: 2px 0 4px 14px; padding: 0; }
+  li { margin-bottom: 2px; }
+  .page-num {
+    text-align: right;
+    font-size: 7.2pt;
+    color: #718096;
+    margin-top: 2px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ========================================== -->
+<!-- PÁGINA 1                                   -->
+<!-- ========================================== -->
+<table class="header-table">
+  <tr>
+    <td style="width: 75%;">
+      <div class="inst-title">Universidad de Cuenca</div>
+      <div class="inst-sub">Departamento de Ingeniería Civil | Red Sísmica del Austro (RSA)</div>
+    </td>
+    <td style="width: 25%; text-align: right;">
+      <div class="badge-anexo">ANEXO TÉCNICO 2</div>
+      <div style="font-size: 7pt; color: #4a5568; margin-top: 2px;">Expediente FOR-10</div>
+    </td>
+  </tr>
+</table>
+
+<div class="meta-box">
+  <div class="meta-grid">
+    <div class="meta-row">
+      <div class="meta-cell"><span class="meta-label">Profesional:</span> Ing. Milton Rodrigo Muñoz Calle</div>
+      <div class="meta-cell"><span class="meta-label">Contrato:</span> CO-01056-2026</div>
+      <div class="meta-cell"><span class="meta-label">Periodo:</span> 01/10/2026 – 31/10/2026</div>
+    </div>
+    <div class="meta-row">
+      <div class="meta-cell"><span class="meta-label">Objeto Contractual:</span> Objeto 6 (Gestión y preservación de datos en estaciones)</div>
+      <div class="meta-cell"><span class="meta-label">Entregable:</span> Gobernanza de Almacenamiento, Control de Retro-Presión y Blindaje contra Livelock</div>
+      <div class="meta-cell"><span class="meta-label">Código:</span> RSA-EVI-2026-10-ANX02</div>
+    </div>
+  </div>
+</div>
+
+<h2 class="sec-title">1. Objeto Contractual y Alcance Técnico Pericial</h2>
+<p>
+El presente anexo técnico certifica pericialmente la ejecución de las soluciones de ingeniería para la gestión, preservación del almacenamiento local y transmisión resiliente de datos en las estaciones remotas de la Red Sísmica del Austro (RSA), en cumplimiento estricto del <strong>Objeto Contractual 6</strong>: <em>"Implementación de una solución de gestión y preservación de datos para el manejo del almacenamiento en las estaciones de monitoreo"</em>. El alcance abarca la evacuación y rescate de 1,934 archivos retenidos en la estación <code>CHA02</code>, el desarrollo del orquestador modular <code>procesar_y_subir_pendientes.py</code> (Releases <strong>v4.5.3</strong> y <strong>v4.5.4</strong>) con control de flujo por retro-presión (<em>backpressure</em>), el blindaje integral del pipeline continuo contra livelock de memoria (ADR-024) y la corrección de fallas críticas de desalojo de espacio en disco en estaciones de prueba (ADR-025).
+</p>
+
+<h2 class="sec-title">2. Evacuación y Rescate Controlado de Archivos en CHA02 (evacuacion_controlada_drive.py)</h2>
+<p>
+Al inicio del mes se constató en <code>CHA02</code> una acumulación de <strong>2,066 archivos (~2.65 GB)</strong> entre MiniSEED continuos y eventos extraídos debido a duplicaciones masivas originadas por ejecuciones concurrentes de <code>gestor_archivos_acq.py</code> sin cerrojo <code>flock</code>. Para rescatar los datos de forma segura sin saturar el procesador ni colapsar el enlace de red, se implementó el script de contingencia <code>evacuacion_controlada_drive.py</code> en <code>/home/rsa/projects/acelerografo/scripts/drive/</code>, incorporando salvaguardas periciales avanzadas:
+</p>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th style="width: 25%;">Salvaguarda Técnica</th>
+      <th style="width: 45%;">Mecanismo de Control y Arquitectura</th>
+      <th style="width: 30%;">Efecto Cuantitativo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Cerrojo Atómico Exclusivo</strong></td>
+      <td>Uso de <code>fcntl.flock(lock_fd, fcntl.LOCK_EX | fcntl.LOCK_NB)</code> para imposibilitar instancias paralelas durante la evacuación.</td>
+      <td>Eliminación total de duplicaciones y colisiones concurrentes.</td>
+    </tr>
+    <tr>
+      <td><strong>Inmunidad a Desconexión SSH</strong></td>
+      <td>Manejo de señales <code>signal.SIGHUP</code> y ejecución bajo <code>nohup</code> en segundo plano desacoplado de la terminal.</td>
+      <td>Proceso ininterrumpido durante 8 horas nocturnas continuas.</td>
+    </tr>
+    <tr>
+      <td><strong>Priorización en Dos Fases</strong></td>
+      <td>Fase 1: Transmisión incondicional de eventos sísmicos extraídos. Fase 2: Transmisión de MiniSEED continuo.</td>
+      <td>Preservación garantizada de señales de eventos sismológicos.</td>
+    </tr>
+    <tr>
+      <td><strong>Prevención de Bufferbloat</strong></td>
+      <td>Pausa forzada de 1.5 s entre archivos transferidos y recolección periódica de memoria mediante <code>gc.collect()</code>.</td>
+      <td>Latencia de ping conservada en &lt; 35 ms; enlace SSH 100% fluido.</td>
+    </tr>
+    <tr>
+      <td><strong>Rescate Efectivo y Purgado</strong></td>
+      <td>Transferencia exitosa de <strong>1,934 archivos</strong> y purga programada de 131 archivos expirados según la política de retención.</td>
+      <td>Espacio libre recuperado a <strong>7.8 GB (72% de ocupación)</strong>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <strong>Restablecimiento de la Capacidad Local:</strong> La evacuación controlada permitió restaurar la correspondencia 1:1 entre el registro local <code>uploaded_files_registry.json</code> y el repositorio en Google Drive, devolviendo a la estación una holgura de más de 90 días de almacenamiento autónomo seguro.
+</div>
+
+<div class="page-num">Página 1 de 3 — Anexo 2 | CO-01056-2026</div>
+
+<!-- ========================================== -->
+<!-- PÁGINA 2                                   -->
+<!-- ========================================== -->
+<div class="page-break"></div>
+
+<table class="header-table">
+  <tr>
+    <td style="width: 75%;">
+      <div class="inst-title">Universidad de Cuenca</div>
+      <div class="inst-sub">Departamento de Ingeniería Civil | Red Sísmica del Austro (RSA)</div>
+    </td>
+    <td style="width: 25%; text-align: right;">
+      <div class="badge-anexo">ANEXO TÉCNICO 2</div>
+      <div style="font-size: 7pt; color: #4a5568; margin-top: 2px;">Expediente FOR-10</div>
+    </td>
+  </tr>
+</table>
+
+<h2 class="sec-title">3. Arquitectura Desacoplada y Control de Retro-Presión (Releases v4.5.3 y v4.5.4)</h2>
+<p>
+Para superar la rigidez del pipeline histórico y procesar de manera segura los archivos acumulados durante la indisponibilidad de DNS, se diseñó e implementó <code>procesar_y_subir_pendientes.py</code> junto con su wrapper ejecutable <code>/usr/local/bin/procesarpendientes</code>. La herramienta desacopla estrictamente la conversión local de la subida remota y, mediante el release <strong>v4.5.4</strong>, incorpora un modelo de <strong>Control de Flujo por Retro-Presión (Backpressure)</strong> para evitar la duplicación de espacio en tarjeta MicroSD (~18 MB por hora si se generan <code>.dat</code> y <code>.mseed</code> simultáneamente):
+</p>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th style="width: 22%;">Funcionalidad</th>
+      <th style="width: 48%;">Principio de Operación y Parámetros</th>
+      <th style="width: 30%;">Impacto en Estaciones de Campo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Retro-Presión Dinámica</strong></td>
+      <td>Cálculo de cupo disponible: <code>cupo = max(0, batch_size - en_disco)</code>. Si la cola en disco supera el lote, frena la conversión de nuevos <code>.dat</code>.</td>
+      <td>Impide el agotamiento del disco por conversión desmedida de backlog.</td>
+    </tr>
+    <tr>
+      <td><strong>Fail-Fast DNS Inicial</strong></td>
+      <td>Verificación obligatoria de resolución de dominio previo a convertir. Si no hay conexión hacia la nube, se aborta sin generar archivos.</td>
+      <td>Cero generación de archivos <code>.mseed</code> huérfanos sin salida garantizada.</td>
+    </tr>
+    <tr>
+      <td><strong>Purga de Subidos</strong></td>
+      <td>Bandera <code>--delete-uploaded</code>: eliminación inmediata del archivo MiniSEED local tras recibir confirmación HTTP 200 de Google Drive.</td>
+      <td>Liberación instantánea de espacio sin esperar al cron de retención.</td>
+    </tr>
+    <tr>
+      <td><strong>Purga de Binarios Brutos</strong></td>
+      <td>Bandera <code>--purge-dat</code>: eliminación sistemática de binarios <code>.dat</code> cuyos MiniSEED ya consten confirmados en la nube.</td>
+      <td>Ahorro masivo del 50% del almacenamiento físico ocupado en MicroSD.</td>
+    </tr>
+    <tr>
+      <td><strong>Protección de Grabación</strong></td>
+      <td>Exclusión incondicional del archivo binario activo en grabación SPI por tiempo de modificación (<code>mtime &lt; 2h</code>) y registro temporal.</td>
+      <td>Cero riesgo de corrupción de datos sísmicos en proceso de captura.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="sec-title">4. Blindaje Integral del Pipeline Continuo contra Livelock de Memoria (ADR-024)</h2>
+<p>
+Bajo el blueprint <code>2026-10-14</code> y el <strong>ADR-024</strong>, se trasladaron las lecciones aprendidas al pipeline continuo regular de producción (<code>gestor_archivos_acq.py</code> y <code>registrocontinuo.sh</code>), resolviendo la degradación que saturaba la swap al 98.5% en la Raspberry Pi 3B+:
+</p>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th style="width: 25%;">Vulnerabilidad Previa</th>
+      <th style="width: 45%;">Mecanismo de Blindaje Implementado (ADR-024)</th>
+      <th style="width: 30%;">Validación Cuantitativa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Concurrencia descontrolada</strong></td>
+      <td>Doble cerrojo: guarda <code>is_running</code> en bash y cerrojo atómico no bloqueante <code>fcntl.flock</code> en <code>/tmp/gestor_archivos_acq.lock</code>.</td>
+      <td>Imposibilidad absoluta de instancias concurrentes. Código de salida 0 limpio.</td>
+    </tr>
+    <tr>
+      <td><strong>Falso positivo de red</strong></td>
+      <td>Sustitución de socket IP a <code>8.8.8.8:53</code> por resolución real FQDN vía <code>socket.getaddrinfo("www.googleapis.com", 443, timeout=5)</code>.</td>
+      <td>Aborto temprano (Fail-Fast) en 5 ms; erradicación de bucles de timeout.</td>
+    </tr>
+    <tr>
+      <td><strong>Contienda y Bufferbloat</strong></td>
+      <td>Colas prioritarias desacopladas (<code>event</code> &rarr; <code>mseed</code> &rarr; <code>continuous</code>), lotes acotados (<code>batch_size=20</code>) y pausas de 1.5 s.</td>
+      <td>Preservación de sockets SSH (puerto 22) durante transferencias masivas.</td>
+    </tr>
+    <tr>
+      <td><strong>Timeouts prolongados</strong></td>
+      <td>Reducción del timeout de sockets HTTP en <code>subir_archivo.py</code> de 300 segundos a 60 segundos (<code>Http(timeout=60)</code>).</td>
+      <td>Recuperación rápida ante microdesconexiones de red celular.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <strong>Certificación de Pruebas Unitarias:</strong> El comportamiento de <code>gestor_archivos_acq.py</code> fue certificado con una suite de 18 pruebas unitarias automatizadas combinadas (aislamiento en <code>tempfile</code>, mocks de DNS y simulación de cerrojos bloqueantes), ejecutadas en 1.816 segundos con 100% de aprobación.
+</div>
+
+<div class="page-num">Página 2 de 3 — Anexo 2 | CO-01056-2026</div>
+
+<!-- ========================================== -->
+<!-- PÁGINA 3                                   -->
+<!-- ========================================== -->
+<div class="page-break"></div>
+
+<table class="header-table">
+  <tr>
+    <td style="width: 75%;">
+      <div class="inst-title">Universidad de Cuenca</div>
+      <div class="inst-sub">Departamento de Ingeniería Civil | Red Sísmica del Austro (RSA)</div>
+    </td>
+    <td style="width: 25%; text-align: right;">
+      <div class="badge-anexo">ANEXO TÉCNICO 2</div>
+      <div style="font-size: 7pt; color: #4a5568; margin-top: 2px;">Expediente FOR-10</div>
+    </td>
+  </tr>
+</table>
+
+<h2 class="sec-title">5. Corrección de Acumulación Crítica de Disco y Desalojo Iterativo (ADR-025)</h2>
+<p>
+El 19 de octubre se diagnosticó en las estaciones <code>DEV00</code> y <code>TES00</code> una falla crítica por agotamiento de almacenamiento: la partición <code>/dev/root</code> alcanzó el <strong>96% de ocupación (solo 572 MB libres / 3.92%)</strong>, acumulando más de 744 MiniSEED y cientos de binarios brutos. El análisis forense documentó cuatro defectos encadenados: un <code>NameError</code> determinista por variable no declarada (<code>archivo_mas_reciente_continuous</code>), desalojo unitario ineficaz (cláusula <code>break</code> tras borrar un único archivo de 4.2 MB), falso positivo de concurrencia al chocar con lockfiles de <code>root</code>, y sobredimensionamiento de retención de binarios (30 días requerían ~10.1 GB en microSDs de 16 GB).
+</p>
+<p>
+Bajo el <strong>ADR-025</strong> se implementaron las correcciones estructurales definitivas en el subsistema de purga y control de espacio:
+</p>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th style="width: 25%;">Defecto Corregido</th>
+      <th style="width: 45%;">Solución de Ingeniería Aplicada (ADR-025)</th>
+      <th style="width: 30%;">Resultado Comprobado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>NameError Determinista</strong></td>
+      <td>Unificación de salvaguarda de archivos activos utilizando la lista <code>archivos_activos_continuous</code>.</td>
+      <td>Cero excepciones por variables huérfanas en ejecución de purga.</td>
+    </tr>
+    <tr>
+      <td><strong>Desalojo Unitario Ineficaz</strong></td>
+      <td>Implementación de bucle dinámico iterativo (<code>while free_space &lt; umbral_minimo: desalojar()</code>) con recálculo continuo de espacio.</td>
+      <td>Desalojo continuo de archivos caducados hasta alcanzar la cuota segura.</td>
+    </tr>
+    <tr>
+      <td><strong>Colisión de Permisos de Lock</strong></td>
+      <td>Aislamiento de cerrojo mediante <code>obtener_ruta_cerrojo()</code> priorizando <code>$PROJECT_LOCAL_ROOT/tmp-files/</code> con propiedad <code>rsa:rsa</code>.</td>
+      <td>Discriminación estricta entre <code>BlockingIOError</code> (0) y <code>PermissionError</code> (1).</td>
+    </tr>
+    <tr>
+      <td><strong>Sobredimensión de Retención</strong></td>
+      <td>Estandarización de la política de retención de binarios continuos brutos a <strong>7 días</strong> en <code>configuracion_dispositivo.json</code>.</td>
+      <td>Ahorro permanente de 7.5 GB en tarjetas MicroSD de 16 GB.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="sec-title">6. Criterios Cuantitativos de Conformidad y Resultados Operativos</h2>
+<p>
+La implementación de las soluciones de gestión y preservación de datos arrojó los siguientes indicadores cuantitativos de conformidad en pruebas y producción:
+</p>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th style="width: 30%;">Métrica Cuantitativa</th>
+      <th style="width: 35%;">Método de Medición / Auditoría</th>
+      <th style="width: 35%;">Resultado de Conformidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Espacio Libre Recuperado (DEV00)</strong></td>
+      <td>Inspección de sistema de ficheros <code>df -h /dev/root</code>.</td>
+      <td>Incremento de <strong>3.77% a 10.0% (1.5 GB disponibles)</strong>.</td>
+    </tr>
+    <tr>
+      <td><strong>Saneamiento de Registros</strong></td>
+      <td>Auditoría de <code>uploaded_files_registry.json</code>.</td>
+      <td><strong>297 registros huérfanos purgados</strong> en correspondencia 1:1.</td>
+    </tr>
+    <tr>
+      <td><strong>Archivos Evacuados (CHA02)</strong></td>
+      <td>Log de transferencia de <code>evacuacion_controlada_drive.py</code>.</td>
+      <td><strong>1,934 archivos (~2.65 GB)</strong> transferidos con éxito.</td>
+    </tr>
+    <tr>
+      <td><strong>Suite Unitaria Gestor de Archivos</strong></td>
+      <td>Ejecución de <code>test_gestor_archivos_acq.py</code>.</td>
+      <td><strong>10/10 tests aprobados en 0.040 s</strong> en DEV00.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="sec-title">7. Certificación Pericial de Responsabilidad Técnica</h2>
+<p>
+Se certifica la veracidad y rigor técnico de los registros de ingeniería, métricas cuantitativas, códigos de despliegue y criterios de aceptación documentados en este anexo técnico en el marco del cumplimiento del Objeto 6 del contrato CO-01056-2026.
+</p>
+
+<div class="footer-sign">
+  <table style="width: 100%; border-collapse: collapse;">
+    <tr>
+      <td style="width: 65%; font-size: 7.5pt; vertical-align: bottom;">
+        <strong>Certificación Técnica:</strong> Documento probatorio emitido bajo la normativa institucional de la Universidad de Cuenca para auditoría de Control Interno y descargo financiero de actividades.
+      </td>
+      <td style="width: 35%; text-align: center;">
+        <div class="sign-box">
+          <strong>Ing. Milton Rodrigo Muñoz Calle</strong><br>
+          Especialista Técnico RSA — Contrato CO-01056-2026<br>
+          Departamento de Ingeniería Civil | Universidad de Cuenca
+        </div>
+      </td>
+    </tr>
+  </table>
+  <div class="page-num">Página 3 de 3 — Anexo 2 | CO-01056-2026</div>
+</div>
+
+</body>
+</html>

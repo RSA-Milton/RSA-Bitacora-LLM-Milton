@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -127,11 +127,11 @@
     padding-top: 6px;
   }
   .sign-box {
-    width: 220px;
+    width: 250px;
     text-align: center;
     border-top: 1px solid #2d3748;
-    margin: 18px auto 4px auto;
-    padding-top: 2px;
+    margin: 55px auto 4px auto; /* Espacio vertical amplio de 55px para firma digital */
+    padding-top: 4px;
     font-size: 7.8pt;
   }
   ul { margin: 2px 0 4px 14px; padding: 0; }
@@ -286,7 +286,7 @@ Se ejecutó la consolidación definitiva del dashboard analítico de diagnóstic
     <tr>
       <td><strong>Integridad Triaxial (id: 25)</strong></td>
       <td>Necesidad de auditar la estabilidad física del acelerómetro y la deriva del reloj en reposo.</td>
-      <td><strong>Preservación de muestreo continuo a 5 min</strong> con capacidad ampliada a <strong>30 filas</strong> ($Z, N, E$ y clock source).</td>
+      <td><strong>Preservación de muestreo continuo a 5 min</strong> con capacidad ampliada a <strong>30 filas</strong> (Z, N, E y clock source).</td>
     </tr>
     <tr>
       <td><strong>Paneles Singulares Stat (id: 21, 24, 27, 28)</strong></td>
@@ -306,7 +306,7 @@ En las estaciones acelerográficas de campo (repositorio <code>RSA-Acelerografo<
     <ul>
       <li><strong>Salud del Hardware (<code>telemetry/health</code>):</strong> Voltajes de alimentación, temperatura de CPU, memoria y estado de servicios Supervisor.</li>
       <li><strong>Watchdog de Adquisición (<code>status/acquisition</code>):</strong> Evaluación del desfase temporal de la última trama física ingresada al Ring Buffer (<code>age_seconds</code>).</li>
-      <li><strong>Watchdog del Sensor Triaxial (<code>status/sensor</code>):</strong> Módulo <code>SensorWatchdog</code> que verifica en reposo las aceleraciones estáticas en los 3 ejes ($|A_x|, |A_y| \le 0.5\text{ m/s}^2$, $|A_z - 9.81| \le 0.8\text{ m/s}^2$) y la sincronía del reloj (GPS/RPi).</li>
+      <li><strong>Watchdog del Sensor Triaxial (<code>status/sensor</code>):</strong> Módulo <code>SensorWatchdog</code> que verifica en reposo las aceleraciones estáticas en los 3 ejes (|A<sub>x</sub>|, |A<sub>y</sub>| ≤ 0.5 m/s², |A<sub>z</sub> - 9.81| ≤ 0.8 m/s²) y la sincronía del reloj (GPS/RPi).</li>
       <li><strong>Watchdog de Google Drive (<code>status/drive</code>):</strong> Módulo <code>DriveWatchdog</code> que audita el backlog de subida y porcentaje de disco libre.</li>
     </ul>
   </li>

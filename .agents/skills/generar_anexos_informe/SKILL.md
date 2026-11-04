@@ -61,6 +61,10 @@ La clasificación de los entregables se rige por los siguientes objetos contract
    - **Únicamente generan anexo los objetos marcados como `Ejecutado`** en el informe mensual correspondiente (`XX_informe.txt`). Los objetos `No ejecutado` no generan documento probatorio.
 6. **Numeración Secuencial:**
    - Los anexos se numeran secuencialmente a partir del 1 (ej. *Anexo 1*, *Anexo 2*, *Anexo 3*, etc.), en el orden en que aparecen los objetos ejecutados en el contrato.
+7. **Prohibición de Notación LaTeX (`$...$`):**
+   - El documento HTML es interpretado directamente por un motor de navegador web offline sin bibliotecas KaTeX o MathJax. **Está terminantemente prohibido usar delimitadores de dólar `$ ... $` o sintaxis LaTeX** (ej. `$O(M \cdot N)$`, `$a_x$`, `$\mu\epsilon$`, `$\le$`). Toda notación matemática o técnica debe escribirse con HTML y Unicode nativo: `O(M·N)`, `O(N)`, `a<sub>x</sub> ≈ 0.64 g`, `µε`, `°C`, `≤`, `≥`, `Δt`, `m/s²`.
+8. **Espacio para Firma Electrónica Digital:**
+   - En la última página, la caja de firma (`.sign-box`) debe contar con un espacio vertical libre superior de al menos **50 a 60 px** (`margin: 55px auto 4px auto`) por encima de la línea divisoria para permitir estampar con holgura el sello visual del certificado de firma digital (FirmaEC, Quipux, Adobe Acrobat) sin solapar textos ni tablas precedentes.
 
 ---
 
@@ -69,7 +73,7 @@ La clasificación de los entregables se rige por los siguientes objetos contract
 ### 1. Extracción del Período y Triaje de Objetos Ejecutados
 - Identifica el **mes** (con prefijo de dos dígitos `XX`, ej. `09`) y el **año** (`YYYY`, ej. `2026`).
 - Lee el archivo `institucional/RSA-Bitacora-LLM-Milton/informes/YYYY/XX_informe.txt`.
-- Identifica los objetos que se encuentran en estado `- Estado: Ejecutado`.
+- Identifica los objetos que se encuentran en estado `Estado: Ejecutado` (admitiendo prefijos como `•\tEstado: Ejecutado`, `• Estado: Ejecutado` o `- Estado: Ejecutado`).
 - Asigna la numeración secuencial de anexos:
   - Primer objeto ejecutado &rarr; **Anexo 1**
   - Segundo objeto ejecutado &rarr; **Anexo 2**
