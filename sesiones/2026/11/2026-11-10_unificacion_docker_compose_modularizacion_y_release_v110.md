@@ -1,6 +1,6 @@
 ---
 fecha: 2026-11-10
-temas: [docker-compose, orquestacion, telegraf, nodered]
+temas: [docker-compose, orquestacion, telegraf, nodered, multi-servidor, tailscale, migracion]
 entorno: [tig]
 autor: Milton
 ---
@@ -12,7 +12,9 @@ Se llevó a cabo una refactorización estructural profunda del repositorio insti
 
 De forma complementaria, se implementó una arquitectura simétrica y modular para las configuraciones de los servicios: se creó el módulo `services/telegraf/` para alojar `telegraf.conf` y su documentación; se estructuró `services/influxdb/` incorporando un script Bash desatendido (`init/01-init-buckets.sh`) montado en `/docker-entrypoint-initdb.d/` para la creación automática e idempotente del bucket permanente `rsa_events`; y se blindó `services/node-red/` con un `.gitignore` estricto y un README operativo para la sincronización de flujos con el volumen `${DATA_DIR}/nodered`. Para prevenir problemas de concurrencia y desconexiones intermitentes ("Client Stealing") en el broker MQTT, se parametrizaron las variables `NODE_RED_PORT` y `NODE_RED_CLIENT_ID`.
 
-Finalmente, se formuló el blueprint de ejecución por fases, se validó el stack en el entorno local WSL 2 con respuestas nominales en todos los puertos expuestos (:8086, :3000, :8501, :1880), se documentó el histórico en `CHANGELOG.md` y se formalizó el release oficial `v1.1.0` en `main`. Durante el despliegue en el servidor central de producción (`server-ubuntu`), se diagnosticó y resolvió un conflicto de nombres por la persistencia del contenedor anterior huérfano de Node-RED, logrando restablecer la operación nominal de los 6 microservicios con perfil `primary`. La decisión técnica quedó registrada en el ADR-028.
+Se formuló el blueprint de ejecución por fases, se validó el stack en el entorno local WSL 2 con respuestas nominales en todos los puertos expuestos (:8086, :3000, :8501, :1880), se documentó el histórico en `CHANGELOG.md` y se formalizó el release oficial `v1.1.0` en `main`. Durante el despliegue en el servidor central de producción (`server-ubuntu`), se diagnosticó y resolvió un conflicto de nombres por la persistencia del contenedor anterior huérfano de Node-RED, logrando restablecer la operación nominal de los 6 microservicios con perfil `primary`. La decisión técnica quedó registrada en el ADR-028.
+
+Posteriormente, se culminó la migración del servidor espejo remoto `parmontserver` (`parmont@parmontserver`) conectado vía **Tailscale**. Se clonó la versión oficial `v1.1.0`, se transfirió la configuración adaptándola al rol `mirror` con `DATA_DIR=/home/parmont/data`, `TELEGRAF_CLIENT_ID=events-home` y `NODE_RED_CLIENT_ID=nodered-rsa-control-home`, y se detuvieron los contenedores anteriores para evitar colisiones. El despliegue unificado levantó con éxito los 5 microservicios requeridos (sin correlador activo), certificando la coexistencia multi-servidor y la preservación intacta del almacenamiento histórico de datos.
 
 **Decisiones y Cambios:**
 - Unificación de Node-RED en el Docker Compose maestro (`services/docker-unified/docker-compose.yml`) y remoción del compose redundante en `services/node-red/`.
@@ -21,6 +23,7 @@ Finalmente, se formuló el blueprint de ejecución por fases, se validó el stac
 - Creación de `CHANGELOG.md` institucional bajo el estándar Keep a Changelog y Semantic Versioning (SemVer 2.0.0).
 - Sincronización selectiva a `main` aislando `docs/` y publicación del Git Tag oficial anotado `v1.1.0`.
 - Saneamiento en producción `server-ubuntu`: detención y remoción del contenedor huérfano previo `/rsa-nodered` y despliegue exitoso del stack unificado.
+- Migración y puesta en producción del servidor espejo remoto `parmontserver` vía Tailscale: clonación de `v1.1.0`, configuración de `RSA_SERVER_ROLE=mirror` y despliegue de los 5 contenedores de ingesta y visualización.
 - Documentación formal de la decisión de arquitectura en el ADR-028.
 
 **Scripts/Comandos relevantes:**
@@ -49,5 +52,18 @@ git push origin main && git push origin v1.1.0
 docker stop rsa-nodered && docker rm rsa-nodered
 cd ~/git/RSA-Monitor-Sismico/services/docker-unified
 docker compose --profile primary up -d --build
+
+# 5. Migración en servidor espejo parmontserver vía Tailscale
+cd ~/git/rsa
+git clone https://github.com/RSA-Proyectos/RSA-Monitor-Sismico.git
+cd RSA-Monitor-Sismico && git checkout v1.1.0
+cp ~/git/rsa/RSA-Intern-TIG-MQTT/services/docker-unified/.env services/docker-unified/.env
+echo "NODE_RED_PORT=1880" >> services/docker-unified/.env
+echo "NODE_RED_CLIENT_ID=nodered-rsa-control-home" >> services/docker-unified/.env
+cd ~/git/rsa/RSA-Intern-TIG-MQTT/services/docker-unified && docker compose down
+docker stop rsa-nodered 2>/dev/null || true && docker rm rsa-nodered 2>/dev/null || true
+cd ~/git/rsa/RSA-Monitor-Sismico/services/docker-unified
+docker compose up -d --build
+docker compose ps
 ```
 ---
